@@ -1,0 +1,13 @@
+name: 'BUD Banner'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - flexslider_views
+  - image
+  - node
+  - system
+  - user
+  - views
+version: 8.x-1.0-beta1
+package: 'BUD Features'
