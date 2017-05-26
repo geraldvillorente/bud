@@ -5,10 +5,16 @@
  *
  * Place your custom PHP code in this file.
  */
+use Drupal\Views\ViewExecutable;
 
 /**
- * Implements theme_preprocess_page().
+ * Implements hook_views_pre_render().
  */
-function bud_preprocess_page(&$variables) {
- //kint($variables);
+function bud_views_pre_render(ViewExecutable $view) {
+  // Removed default message in front page.
+  if($view->id() == 'frontpage' && $view->current_display == 'page_1') {
+    unset($view->empty['area_text_custom']);
+    unset($view->empty['node_listing_empty']);
+    unset($view->empty['title']);
+  }
 }
