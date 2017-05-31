@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_slideshow
+    - node.type.project
+id: node.project.field_featured_slideshow
+field_name: field_featured_slideshow
+entity_type: node
+bundle: project
+label: 'Show in Featured Slideshow'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

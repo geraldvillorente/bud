@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.project.body
+    - field.field.node.project.field_featured_slideshow
+    - field.field.node.project.field_image
+    - field.field.node.project.field_teaser_description
+    - field.field.node.project.field_teaser_title
+    - node.type.project
+  module:
+    - text
+    - user
+id: node.project.teaser
+targetEntityType: node
+bundle: project
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_featured_slideshow: true
+  field_image: true
+  field_teaser_description: true
+  field_teaser_title: true
+  langcode: true

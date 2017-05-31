@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latest_news
+    - node.type.story
+id: node.story.field_latest_news
+field_name: field_latest_news
+entity_type: node
+bundle: story
+label: 'Show in Latest News?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

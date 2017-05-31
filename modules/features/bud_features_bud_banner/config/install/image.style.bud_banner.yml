@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: bud_banner
+label: 'BUD Banner'
+effects:
+  e9ff271b-1b47-40a7-adf9-12d1c4eb9ba9:
+    uuid: e9ff271b-1b47-40a7-adf9-12d1c4eb9ba9
+    id: image_scale
+    weight: 1
+    data:
+      width: 940
+      height: 400
+      upscale: true
