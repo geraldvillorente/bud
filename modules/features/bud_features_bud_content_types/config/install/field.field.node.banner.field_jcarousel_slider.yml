@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jcarousel_slider
+    - node.type.banner
+id: node.banner.field_jcarousel_slider
+field_name: field_jcarousel_slider
+entity_type: node
+bundle: banner
+label: 'Show in jcarousel slider?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
