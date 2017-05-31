@@ -5,10 +5,8 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner_image
     - field.field.node.page.field_image
-    - image.style.thumbnail
     - node.type.page
   module:
-    - image
     - path
     - text
 id: node.page.default
@@ -31,22 +29,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_banner_image:
-    weight: 32
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_image:
-    weight: 33
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -93,4 +75,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_banner_image: true
+  field_image: true

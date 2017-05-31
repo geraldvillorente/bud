@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_image
     - node.type.page
   module:
-    - image
     - text
     - user
 id: node.page.default
@@ -22,26 +21,10 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_banner_image:
-    weight: 102
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_image:
-    weight: 103
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   links:
     weight: 101
     region: content
 hidden:
+  field_banner_image: true
+  field_image: true
   langcode: true

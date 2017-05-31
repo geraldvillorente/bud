@@ -4,6 +4,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.story.body
+    - field.field.node.story.field_featured_slideshow
+    - field.field.node.story.field_image
+    - field.field.node.story.field_latest_news
+    - field.field.node.story.field_recently_published
+    - field.field.node.story.field_teaser_description
+    - field.field.node.story.field_teaser_title
     - node.type.story
   module:
     - text
@@ -25,4 +31,10 @@ content:
     weight: 100
     region: content
 hidden:
+  field_featured_slideshow: true
+  field_image: true
+  field_latest_news: true
+  field_recently_published: true
+  field_teaser_description: true
+  field_teaser_title: true
   langcode: true
