@@ -61,3 +61,6 @@ core/MAINTAINERS.txt
 core/UPDATE.txt
 core/.eslintignore
 core/.eslintrc.json
+/.buildpath
+/.project
+/.settings
