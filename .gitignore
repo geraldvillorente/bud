@@ -64,3 +64,4 @@ core/.eslintrc.json
 /.buildpath
 /.project
 /.settings
+/.DS_Store
