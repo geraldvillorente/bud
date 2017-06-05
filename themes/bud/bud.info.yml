@@ -113,9 +113,16 @@ regions:
   title: Title
   help: Help
   content: Content
+  content_first: Content First
+  content_second: Content Second
+  content_third: Content Third
+  content_bottom: Content Bottom
   sidebar_first: First sidebar
   sidebar_second : Second sidebar
   footer: Footer
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
   bottom: Page bottom
   # The page_top and page_bottom regions are hidden, which means they will not
   # show up on the block layout page. But they are required in order for the
