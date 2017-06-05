@@ -1,2 +1,4 @@
 bundle: bud_features
+excluded:
+  - field.storage.node.field_date
 required: true
