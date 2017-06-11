@@ -289,6 +289,32 @@ display:
           plugin_id: datetime_year_month
       defaults:
         arguments: false
+        header: false
+      header:
+        calendar_header:
+          id: calendar_header
+          table: views
+          field: calendar_header
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: 1
+          content: '{{ arguments.field_date_value_year_month }}'
+          pager_embed: 0
+          plugin_id: calendar_header
+        calendar_header_1:
+          id: calendar_header_1
+          table: views
+          field: calendar_header
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: 1
+          content: ''
+          pager_embed: 1
+          plugin_id: calendar_header
     cache_metadata:
       max-age: 0
       contexts:
