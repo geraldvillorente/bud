@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.date.field_date
     - node.type.date
   module:
-    - datetime_range
+    - datetime
     - path
     - text
 id: node.date.default
@@ -33,7 +33,7 @@ content:
     weight: 32
     settings: {  }
     third_party_settings: {  }
-    type: daterange_default
+    type: datetime_default
     region: content
   langcode:
     type: language_select

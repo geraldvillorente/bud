@@ -6,6 +6,7 @@ dependencies:
   - calendar
   - comment
   - content_translation
+  - datetime
   - datetime_range
   - feeds
   - field
