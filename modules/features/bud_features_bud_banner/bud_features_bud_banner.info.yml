@@ -3,6 +3,7 @@ type: module
 core: 8.x
 dependencies:
   - block
+  - bud_features_bud_content_types
   - flexslider_views
   - image
   - node
