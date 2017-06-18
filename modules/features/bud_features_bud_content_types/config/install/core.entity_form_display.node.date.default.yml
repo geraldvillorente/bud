@@ -1,12 +1,14 @@
-langcode: en
+langcode: zh-hant
 status: true
 dependencies:
   config:
     - field.field.node.date.body
     - field.field.node.date.field_date
+    - field.field.node.date.field_file_attachments
     - node.type.date
   module:
     - datetime
+    - file
     - path
     - text
 id: node.date.default
@@ -34,6 +36,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_file_attachments:
+    weight: 33
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
     region: content
   langcode:
     type: language_select
@@ -69,6 +78,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5

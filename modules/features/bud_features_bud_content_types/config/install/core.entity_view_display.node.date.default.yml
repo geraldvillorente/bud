@@ -1,12 +1,14 @@
-langcode: en
+langcode: zh-hant
 status: true
 dependencies:
   config:
     - field.field.node.date.body
     - field.field.node.date.field_date
+    - field.field.node.date.field_file_attachments
     - node.type.date
   module:
     - datetime
+    - file
     - text
     - user
 id: node.date.default
@@ -29,6 +31,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_file_attachments:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
     region: content
   links:
     weight: 100
