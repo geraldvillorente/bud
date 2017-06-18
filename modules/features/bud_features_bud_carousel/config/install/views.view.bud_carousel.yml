@@ -1,4 +1,4 @@
-langcode: en
+langcode: zh-hant
 status: true
 dependencies:
   config:
@@ -311,10 +311,10 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      rendering_language: '***LANGUAGE_language_content***'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions

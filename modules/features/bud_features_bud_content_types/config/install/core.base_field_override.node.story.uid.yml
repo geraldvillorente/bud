@@ -1,4 +1,4 @@
-langcode: en
+langcode: zh-hant
 status: true
 dependencies:
   config:
