@@ -55,7 +55,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 5
+          items_per_page: 9
           offset: 0
       style:
         type: flexslider
