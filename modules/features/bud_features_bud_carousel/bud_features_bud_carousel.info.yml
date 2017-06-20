@@ -5,6 +5,7 @@ dependencies:
   - block
   - bud_features_bud_content_types
   - image
+  - link
   - node
   - owl
   - system
