@@ -1,0 +1,8 @@
+
+bms_core.b_m_s_core_controller_hello:
+  path: '/bms_core/hello/{name}'
+  defaults:
+    _controller: '\Drupal\bms_core\Controller\BMSCoreController::hello'
+    _title: 'render'
+  requirements:
+    _permission: 'access content'

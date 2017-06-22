@@ -79,6 +79,7 @@ libraries:
   - bud/nav-menu
   - bud/navbar
   - bud/pager
+  - bud/bud-accordion
 
 
 # This section is used by the contrib module, Component Libraries. It allows you
