@@ -55,11 +55,10 @@ function bud_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function bud_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
+// function bud_preprocess_page(&$variables, $hook) {
+//   $variables['sample_variable'] = t('Lorem ipsum.');
+// }
+
 
 /**
  * Override or insert variables into the region templates.
@@ -149,3 +148,10 @@ function bud_views_pre_render(ViewExecutable $view) {
     unset($view->empty['title']);
   }
 }
+
+/**
+ * Implements hook_page_attachement_alter().
+ */
+// function bud_page_attachments_alter(&$page) {
+//   $page['#attached']['library'][] = 'js/bud-accordion';
+// }
