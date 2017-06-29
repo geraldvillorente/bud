@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .inline-sibling,
 .field-label-inline .field-label,
 span.field-label {
@@ -29,3 +30,5 @@ span.field-label {
 .field-label-inline .field-items {
   float: none;
 }
+
+/*# sourceMappingURL=inline-sibling.css.map */

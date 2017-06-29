@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .nav-menu__item,
 .menu__item {
   list-style-image: url(../..//navigation/nav-menu/leaf.svg);
@@ -28,3 +29,5 @@
 .menu a.active {
   color: #000;
 }
+
+/*# sourceMappingURL=nav-menu.css.map */

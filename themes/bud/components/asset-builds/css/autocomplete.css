@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .autocomplete,
 .form-autocomplete {
   background-image: url(../..//forms/autocomplete/throbber-inactive.png);
@@ -46,3 +47,5 @@
 .form-autocomplete.throbbing {
   background-image: url(../..//forms/autocomplete/throbber-active.gif);
 }
+
+/*# sourceMappingURL=autocomplete.css.map */
