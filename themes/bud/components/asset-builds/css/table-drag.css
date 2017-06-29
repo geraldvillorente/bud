@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .table-drag__wrapper,
 body.drag {
   cursor: move;
@@ -113,3 +114,5 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
+
+/*# sourceMappingURL=table-drag.css.map */

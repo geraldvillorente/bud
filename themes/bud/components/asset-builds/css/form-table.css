@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .form-table__sticky-header,
 .sticky-header {
   position: fixed;
@@ -85,3 +86,5 @@ th .checkbox {
   width: -webkit-min-content;
   text-align: center;
 }
+
+/*# sourceMappingURL=form-table.css.map */

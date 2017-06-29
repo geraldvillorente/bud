@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .box {
   margin-bottom: 1.5rem;
   border: 5px solid #cccccc;
@@ -15,3 +16,5 @@
 .box--highlight {
   border-color: #0072b9;
 }
+
+/*# sourceMappingURL=box.css.map */

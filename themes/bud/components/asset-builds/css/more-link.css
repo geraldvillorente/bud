@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .more-link {
   text-align: right;
 }
@@ -5,3 +6,5 @@
 [dir="rtl"] .more-link {
   text-align: left;
 }
+
+/*# sourceMappingURL=more-link.css.map */

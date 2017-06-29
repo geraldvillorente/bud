@@ -1,3 +1,4 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
 .progress-bar,
 .progress {
   font-weight: bold;
@@ -39,3 +40,5 @@
 [dir="rtl"] .ajax-progress-bar {
   float: right;
 }
+
+/*# sourceMappingURL=progress-bar.css.map */
