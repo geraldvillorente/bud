@@ -185,7 +185,11 @@ wireframe:
 
 bud-accordion:
   js:
-    js/bud-accordion.js: {} 
-  dependencies: 
+    js/bud-accordion.js: {}
+  dependencies:
     - core/jquery
     - core/jquery.ui.accordion
+custom-styles:
+  css:
+    component:
+      components/all/styles.css: {}
