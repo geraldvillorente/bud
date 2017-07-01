@@ -183,6 +183,11 @@ wireframe:
     component:
       components/asset-builds/css/wireframe.css: {}
 
+bud-styles:
+  css:
+    component:
+      components/asset-builds/css/styles.css: {}
+
 bud-accordion:
   js:
     js/bud-accordion.js: {} 
