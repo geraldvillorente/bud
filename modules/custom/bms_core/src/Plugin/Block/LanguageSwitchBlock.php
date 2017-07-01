@@ -98,18 +98,26 @@ class LanguageSwitchBlock extends BlockBase implements ContainerFactoryPluginInt
               $zh_hant = $node->getTranslation('zh-hant');
               $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
             }
-            else {
+            else if ($node->getTranslationStatus('zh-hans')){
               $zh_hans = $node->getTranslation('zh-hans');
               $one = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
+            }
+            else {
+              $zh_hant = $node->getTranslation('zh-hant');
+              $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
             }
 
             if($node->getTranslationStatus('en')) {
               $en = $node->getTranslation('en');
               $two = Link::fromTextAndUrl($links->links['en']['title'], $en->toUrl());
             }
-            else {
+            else if ($node->getTranslationStatus('zh-hans')) {
               $zh_hans = $node->getTranslation('zh-hans');
               $two = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
+            }
+            else {
+              $zh_hant = $node->getTranslation('zh-hant');
+              $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
             }
 
             break;
@@ -118,23 +126,7 @@ class LanguageSwitchBlock extends BlockBase implements ContainerFactoryPluginInt
               $zh_hant = $node->getTranslation('zh-hant');
               $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
             }
-            else {
-              $zh_hans = $node->getTranslation('zh-hans');
-              $one = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
-            }
-
-            if($node->getTranslationStatus('zh-hans')) {
-              $zh_hans = $node->getTranslation('zh-hans');
-              $two = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
-            }
-            else {
-              $en = $node->getTranslation('en');
-              $two = Link::fromTextAndUrl($links->links['en']['title'], $en->toUrl());
-            }
-
-            break;
-          case 'zh-hant':
-            if($node->getTranslationStatus('zh-hans')) {
+            else if ($node->getTranslationStatus('zh-hans')) {
               $zh_hans = $node->getTranslation('zh-hans');
               $one = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
             }
@@ -143,14 +135,39 @@ class LanguageSwitchBlock extends BlockBase implements ContainerFactoryPluginInt
               $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
             }
 
-            if($node->getTranslationStatus('en')) {
+            if($node->getTranslationStatus('zh-hans')) {
+              $zh_hans = $node->getTranslation('zh-hans');
+              $two = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
+            }
+            else if ($node->getTranslationStatus('en')){
               $en = $node->getTranslation('en');
               $two = Link::fromTextAndUrl($links->links['en']['title'], $en->toUrl());
             }
             else {
+              $zh_hant = $node->getTranslation('zh-hant');
+              $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
+            }
+
+            break;
+          case 'zh-hant':
+            if($node->getTranslationStatus('zh-hans')) {
               $zh_hans = $node->getTranslation('zh-hans');
               $one = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
             }
+            else if ($node->getTranslationStatus('zh-hant')) {
+              $zh_hant = $node->getTranslation('zh-hant');
+              $one = Link::fromTextAndUrl($links->links['zh-hant']['title'], $zh_hant->toUrl());
+            }
+
+            if($node->getTranslationStatus('en')) {
+              $en = $node->getTranslation('en');
+              $two = Link::fromTextAndUrl($links->links['en']['title'], $en->toUrl());
+            }
+            else if ($node->getTranslationStatus('zh-hans')) {
+              $zh_hans = $node->getTranslation('zh-hans');
+              $one = Link::fromTextAndUrl($links->links['zh-hans']['title'], $zh_hans->toUrl());
+            }
+            
             break;
         }
       }
