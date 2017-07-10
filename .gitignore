@@ -41,3 +41,27 @@ sites/simpletest
 # Ignore core phpcs.xml and phpunit.xml.
 core/phpcs.xml
 core/phpunit.xml
+
+# Ignore txt files
+LICENSE
+LICENSE.txt
+.eslintignore
+.csslintrc
+.editorconfig
+.eslintrc
+core/CHANGELOG.txt
+core/COPYRIGHT.txt
+core/INSTALL.mysql.txt
+core/INSTALL.pgsql.txt
+core/INSTALL.sqlite.txt
+core/INSTALL.txt
+core/LICENSE.txt
+core/MAINTAINERS.txt
+core/UPDATE.txt
+core/.eslintignore
+core/.eslintrc.json
+/.buildpath
+/.project
+/.settings
+/.DS_Store
+*/.DS_Store
