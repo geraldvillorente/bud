@@ -1,3 +1,44 @@
 div#single-day-container {
   height: 550px !important;
 }
+
+div#block-languageswitcherinterfacetext ul li {
+  display: inline-block;
+  margin: 10px;
+  float: right;
+}
+
+.layout-center {
+  max-width: 960px;
+}
+
+body {
+  font-size: 81.25%;
+}
+
+ul#superfish-main li a {
+  text-decoration: none;
+}
+
+ul#superfish-main li ul {
+  background: #C42026;
+}
+
+ul#superfish-main li ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+span.sf-sub-indicator {
+  display: none;
+}
+
+.is-path-frontpage #block-introductionen div, 
+.is-path-frontpage #block-frontblock1en div, 
+.is-path-frontpage #block-frontblock5en div {
+  min-height: 295px;
+}
+
+div#block-languageswitcherinterfacetext {
+  z-index: 99999;
+}
