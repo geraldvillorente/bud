@@ -107,6 +107,7 @@ component-libraries:
 #   {{ page.header_top }}
 
 regions:
+  language_switcher: Language Switcher
   header: Header
   primary_menu: Primary menu
   secondary_menu: Secondary menu
@@ -115,6 +116,7 @@ regions:
   title: Title
   help: Help
   content: Content
+  featured_content: Featured Content
   content_first: Content First
   content_second: Content Second
   content_third: Content Third

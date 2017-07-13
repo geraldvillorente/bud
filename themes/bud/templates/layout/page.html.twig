@@ -46,143 +46,165 @@
 #}
 
 {{ attach_library('bud/layouts') }}
-<div class="layout-center">
+<div id="featured-bg-outer">
+  <div id="featured-bg">
+  <div id="language-switcher">{{ page.language_switcher }}</div>
+    <div class="layout-center">
+      <header class="header" role="banner">
+        {{ page.header }}
+        {{ page.secondary_menu }}
+      </header>
 
-  <header class="header" role="banner">
-    {{ page.header }}
-    {{ page.secondary_menu }}
-  </header>
+      <div class="layout-3col">
+          {# Decide on layout classes by checking if sidebars have content. #}
+          {% if page.sidebar_first and page.sidebar_second %}
+            {% set content_class        = 'layout-3col__right-content' %}
+            {% set sidebar_first_class  = 'layout-3col__first-left-sidebar' %}
+            {% set sidebar_second_class = 'layout-3col__second-left-sidebar' %}
+          {% elseif (page.sidebar_second) %}
+            {% set content_class        = 'layout-3col__left-content' %}
+            {% set sidebar_first_class  = '' %}
+            {% set sidebar_second_class = 'layout-3col__right-sidebar' %}
+          {% elseif (page.sidebar_first) %}
+            {% set content_class        = 'layout-3col__right-content' %}
+            {% set sidebar_first_class  = 'layout-3col__left-sidebar' %}
+            {% set sidebar_second_class = '' %}
+          {% else %}
+            {% set content_class        = 'layout-3col__full' %}
+            {% set sidebar_first_class  = '' %}
+            {% set sidebar_second_class = '' %}
+          {% endif %}
 
-  <div class="layout-3col">
+          {# Decide on layout classes by checking if footer have content. #}
+          {% if page.footer_first and page.footer_second and page.footer_third %}
+            {% set footer_first_class  = 'layout-3col__col-1' %}
+            {% set footer_second_class = 'layout-3col__col-2' %}
+            {% set footer_third_class  = 'layout-3col__col-3' %}
+          {% elseif (page.footer_first) %}
+            {% set footer_first_class  = 'layout-3col__col-1' %}
+            {% set footer_second_class = '' %}
+            {% set footer_third_class  = '' %}
+          {% elseif (page.footer_second) %}
+            {% set footer_first_class  = '' %}
+            {% set footer_second_class = 'layout-3col__col-2' %}
+            {% set footer_third_class  = '' %}
+          {% elseif (page.footer_third) %}
+            {% set footer_first_class  = '' %}
+            {% set footer_second_class = '' %}
+            {% set footer_third_class  = 'layout-3col__col-3' %}
+          {% endif %}
 
-    {# Decide on layout classes by checking if sidebars have content. #}
-    {% if page.sidebar_first and page.sidebar_second %}
-      {% set content_class        = 'layout-3col__right-content' %}
-      {% set sidebar_first_class  = 'layout-3col__first-left-sidebar' %}
-      {% set sidebar_second_class = 'layout-3col__second-left-sidebar' %}
-    {% elseif (page.sidebar_second) %}
-      {% set content_class        = 'layout-3col__left-content' %}
-      {% set sidebar_first_class  = '' %}
-      {% set sidebar_second_class = 'layout-3col__right-sidebar' %}
-    {% elseif (page.sidebar_first) %}
-      {% set content_class        = 'layout-3col__right-content' %}
-      {% set sidebar_first_class  = 'layout-3col__left-sidebar' %}
-      {% set sidebar_second_class = '' %}
-    {% else %}
-      {% set content_class        = 'layout-3col__full' %}
-      {% set sidebar_first_class  = '' %}
-      {% set sidebar_second_class = '' %}
-    {% endif %}
+          {# Decide on layout classes by checking if content three have content. #}
+          {% if page.content_first and page.content_second and page.content_third %}
+            {% set content_first_class  = 'layout-3col__col-1' %}
+            {% set content_second_class = 'layout-3col__col-2' %}
+            {% set content_third_class  = 'layout-3col__col-3' %}
+          {% elseif (page.content_first) %}
+            {% set content_first_class  = 'layout-3col__col-1' %}
+            {% set content_second_class = '' %}
+            {% set content_third_class  = '' %}
+          {% elseif (page.content_second) %}
+            {% set content_first_class  = '' %}
+            {% set content_second_class = 'layout-3col__col-2' %}
+            {% set content_third_class  = '' %}
+          {% elseif (page.content_third) %}
+            {% set content_first_class  = '' %}
+            {% set content_second_class = '' %}
+            {% set content_third_class  = 'layout-3col__col-3' %}
+          {% endif %}
 
-    {# Decide on layout classes by checking if footer have content. #}
-    {% if page.footer_first and page.footer_second and page.footer_third %}
-      {% set footer_first_class  = 'layout-3col__col-1' %}
-      {% set footer_second_class = 'layout-3col__col-2' %}
-      {% set footer_third_class  = 'layout-3col__col-3' %}
-    {% elseif (page.footer_first) %}
-      {% set footer_first_class  = 'layout-3col__col-1' %}
-      {% set footer_second_class = '' %}
-      {% set footer_third_class  = '' %}
-    {% elseif (page.footer_second) %}
-      {% set footer_first_class  = '' %}
-      {% set footer_second_class = 'layout-3col__col-2' %}
-      {% set footer_third_class  = '' %}
-    {% elseif (page.footer_third) %}
-      {% set footer_first_class  = '' %}
-      {% set footer_second_class = '' %}
-      {% set footer_third_class  = 'layout-3col__col-3' %}
-    {% endif %}
+          <div class="layout-3col__full">
+            {{ page.primary_menu }}
+          </div>
 
-    {# Decide on layout classes by checking if content three have content. #}
-    {% if page.content_first and page.content_second and page.content_third %}
-      {% set content_first_class  = 'layout-3col__col-1' %}
-      {% set content_second_class = 'layout-3col__col-2' %}
-      {% set content_third_class  = 'layout-3col__col-3' %}
-    {% elseif (page.content_first) %}
-      {% set content_first_class  = 'layout-3col__col-1' %}
-      {% set content_second_class = '' %}
-      {% set content_third_class  = '' %}
-    {% elseif (page.content_second) %}
-      {% set content_first_class  = '' %}
-      {% set content_second_class = 'layout-3col__col-2' %}
-      {% set content_third_class  = '' %}
-    {% elseif (page.content_third) %}
-      {% set content_first_class  = '' %}
-      {% set content_second_class = '' %}
-      {% set content_third_class  = 'layout-3col__col-3' %}
-    {% endif %}
+          <main class="{{ content_class }}" role="main">
 
-    <div class="layout-3col__full">
-      {{ page.primary_menu }}
-    </div>
+            {{ page.highlighted }}
+            {{ page.breadcrumb }}
+            <a href="#skip-link" class="visually-hidden visually-hidden--focusable" id="main-content">Back to top</a>{# link target is in html.html.twig #}
+            {{ page.title }}
+            {{ page.help }}
+            {{ page.content }}
+          </main>
 
-    <main class="{{ content_class }}" role="main">
+          {% if page.sidebar_first %}
+            <aside class="{{ sidebar_first_class }}" role="complementary">
+              {{ page.sidebar_first }}
+            </aside>
+          {% endif %}
 
-      {{ page.highlighted }}
-      {{ page.breadcrumb }}
-      <a href="#skip-link" class="visually-hidden visually-hidden--focusable" id="main-content">Back to top</a>{# link target is in html.html.twig #}
-      {{ page.title }}
-      {{ page.help }}
-      {{ page.content }}
-
-    </main>
-
-    {% if page.sidebar_first %}
-      <aside class="{{ sidebar_first_class }}" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="{{ sidebar_second_class }}" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
-    {% if page.content_first %}
-      <div class="{{ content_first_class }}" role="complementary">
-        {{ page.content_first }}
+          {% if page.sidebar_second %}
+            <aside class="{{ sidebar_second_class }}" role="complementary">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
       </div>
-    {% endif %}
+    </div>{# /.layout-center #}
+  </div>
+</div>
 
-    {% if page.content_second %}
-      <div class="{{ content_second_class }}" role="complementary">
-        {{ page.content_second }}
+<div id="featured-outer">
+  <div id="featured">
+    <div id="featured-inner">
+      <div id="featured-sub-inner">
+          {{ page.featured_content }}
       </div>
-    {% endif %}
-
-    {% if page.content_third %}
-      <div class="{{ content_third_class }}" role="complementary">
-        {{ page.content_third }}
-      </div>
-    {% endif %}
-
-    <div class="layout-3col__full">
-      {{ page.content_bottom }}
     </div>
   </div>
+</div>
 
-  {{ page.footer }}
-
-  {% if page.footer_first %}
-    <div class="{{ footer_first_class }}" role="complementary">
-      {{ page.footer_first }}
+<div class="content-wrapper">
+  {% if page.content_first %}
+    <div class="{{ content_first_class }}" role="complementary">
+      {{ page.content_first }}
     </div>
   {% endif %}
 
-  {% if page.footer_second %}
-    <div class="{{ footer_second_class }}" role="complementary">
-      {{ page.footer_second }}
+  {% if page.content_second %}
+    <div class="{{ content_second_class }}" role="complementary">
+      {{ page.content_second }}
     </div>
   {% endif %}
 
-  {% if page.footer_third %}
-    <div class="{{ footer_third_class }}" role="complementary">
-      {{ page.footer_third }}
+  {% if page.content_third %}
+    <div class="{{ content_third_class }}" role="complementary">
+      {{ page.content_third }}
     </div>
   {% endif %}
-</div>{# /.layout-center #}
+</div>
 
-<div class="layout-3col__full">
+<div id="featured-footer">
+  {{ page.content_bottom }}
+</div>
+
+<div id="bud-footer">
+  <div id="bud-footer-inner">
+    <div id="bud-footer-sub-inner">
+      <div class="bud-footer-wrapper">
+        {{ page.footer }}
+
+        {% if page.footer_first %}
+          <div class="{{ footer_first_class }}" role="complementary">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_second %}
+          <div class="{{ footer_second_class }}" role="complementary">
+            {{ page.footer_second }}
+          </div>
+        {% endif %}
+
+        {% if page.footer_third %}
+          <div class="{{ footer_third_class }}" role="complementary">
+            {{ page.footer_third }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="layout-3col__full" id="bottom-footer">
   {{ page.bottom }}
 </div>
