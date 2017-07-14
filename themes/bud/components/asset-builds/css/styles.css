@@ -136,6 +136,11 @@ div#featured-inner {
   background: url(/themes/bud/images/featured2-top-bg.png) left top repeat-x;
 }
 
+div#featured-sub-inner {
+  background: url(/themes/bud/images/featured2-bottom-bg.png) left bottom repeat-x;
+  padding: 14px 0 18px;
+}
+
 div#block-frontfeaturedtext p {
   font-size: 1.83em;
   font-style: italic;
