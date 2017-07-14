@@ -150,8 +150,19 @@ function bud_views_pre_render(ViewExecutable $view) {
 }
 
 /**
- * Implements hook_page_attachement_alter().
+ * Implements hook_form_alter().
  */
-// function bud_page_attachments_alter(&$page) {
-//   $page['#attached']['library'][] = 'js/bud-accordion';
-// }
+function bud_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Add placeholder.
+  $form['elements']['name']['#attributes']['placeholder'] = $form['elements']['name']['#title'];
+  unset($form['elements']['name']['#title']);
+
+  $form['elements']['email']['#attributes']['placeholder'] = $form['elements']['email']['#title'];
+  unset($form['elements']['email']['#title']);
+
+  $form['elements']['subject']['#attributes']['placeholder'] = $form['elements']['subject']['#title'];
+  unset($form['elements']['subject']['#title']);
+
+  $form['elements']['message']['#attributes']['placeholder'] = $form['elements']['message']['#title'];
+  unset($form['elements']['message']['#title']);
+}
