@@ -29,7 +29,9 @@ ul#superfish-main li a {
 }
 
 ul#superfish-main li ul {
-  background: #C42026;
+  background: #992B2E;
+  border-radius: 0px 10px 10px 10px;
+  margin-top: -3px;
 }
 
 ul#superfish-main li ul li a {
@@ -52,10 +54,16 @@ div#block-languageswitcherinterfacetext {
 }
 
 div#language-switcher {
-  padding: 22px;
-  background: #6998A5;
+  float: left;
+  width: 100%;
+  background: url(/themes/bud/images/featured-pattern-bg.png);
+}
+
+div#language-switcher {
+  background-color: #6998A5;
   margin-bottom: 30px;
 }
+
 
 div#block-languageswitcherinterfacetext {
   width: 960px;
@@ -65,7 +73,6 @@ div#block-languageswitcherinterfacetext {
 div#block-languageswitcherinterfacetext ul {
   float: right;
   margin: 0;
-  top: -20px;
   position: relative;
 }
 
@@ -131,6 +138,8 @@ div#featured-inner {
 
 div#block-frontfeaturedtext p {
   font-size: 1.83em;
+  font-style: italic;
+  font-family: Georgia,"Times New Roman",Times,serif
 }
 
 div#block-frontfeaturedtext {
@@ -175,8 +184,8 @@ summary {
   display: none;
 }
 
-table.mini .mini,
-table.mini td {
+#bud-footer table.mini .mini,
+#bud-footer table.mini td {
   background: #444444;
   border: 1px solid #333;
 }
@@ -206,7 +215,7 @@ div#bud-footer .bud-footer-wrapper {
 }
 
 div#block-mainnavigation-5 {
-  margin-top: 10px;
+  margin-top: 55px;
 }
 
 div#block-languageswitcherinterfacetext ul li a {
@@ -215,7 +224,7 @@ div#block-languageswitcherinterfacetext ul li a {
 }
 
 div#block-views-block-banner-block-1 {
-  margin-top: 15px;
+  margin-top: 55px;
 }
 
 .view-bud-carousel .views-field.views-field-field-banner-image {
@@ -240,4 +249,62 @@ div#block-views-block-banner-block-1 {
 .layout-3col {
   margin: auto;
   width: 960px;
+}
+
+ul#superfish-main li a.is-active {
+  background: #992B2E;
+  border-radius: 5px;
+}
+
+ul#superfish-main li {
+  border-radius: 5px;
+}
+
+ul#superfish-main li a:hover {
+  background: #992B2E;
+  border-radius: 5px;
+}
+
+ul#superfish-main li ul li a:hover {
+  background-color: #660000;
+  font-weight: normal;
+}
+
+ul#superfish-main li ul li a {
+  font-weight: normal;
+  text-shadow: none;
+}
+
+div#block-contactsinfo .icon-phone {
+  background: url(/themes/bud/images/icons/footer-icon-phone.png);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+}
+
+div#block-contactsinfo .icon-fax {
+  background: url(/themes/bud/extra-images/images/icons/footer-icon-fax.png);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+}
+
+div#block-contactsinfo .icon-email {
+  background: url(/themes/bud/images/icons/footer-icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+}
+
+div#block-contactsinfo .icon-email a {
+  color: #e8e8e8;
+}
+
+div#block-contactsinfo .icon-address {
+  background: url(/themes/bud/images/icons/footer-icon-address.png);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+}
+
+.icon-phone, .icon-fax, .icon-email, .icon-address {
+  padding-left: 24px;
+  margin-top: 0px;
+  margin-bottom: 4px;
 }
