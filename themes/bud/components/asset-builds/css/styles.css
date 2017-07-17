@@ -40,6 +40,15 @@ iPad 3
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
 /* Styles */
+  h1, h2, h3, h4, h5, h6 {
+    color: #424242;
+  }
+
+  h3 {
+    font-size: 190%;
+    line-height: 1.25em;
+  }
+
   div#single-day-container {
     height: 550px !important;
   }
@@ -198,6 +207,7 @@ iPad 3
     overflow: hidden;
     background-color: #333;
     color: #cecece;
+    clear: both;
   }
 
   div#bud-footer-inner {
@@ -262,7 +272,10 @@ iPad 3
   }
 
   div#block-mainnavigation-5 {
-    margin-top: 55px;
+    padding-top: 39px;
+    padding-bottom: 39px;
+    overflow: visible;
+    float: right;
   }
 
   div#block-languageswitcherinterfacetext ul li a {
@@ -400,6 +413,175 @@ iPad 3
     display: inline-block;
     zoom: 1;
     vertical-align: middle;
+  }
+
+  .owl-wrapper-outer {
+    width: 830px !important;
+    margin: auto;
+  }
+
+  .owl-prev {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background-image: url(/themes/bud/extra-images/images/jcarousel-next.png) !important;
+    height: 51px;
+    width: 30px;
+  }
+
+  .owl-next {
+    position: absolute;
+    left: 0;
+    top: 55px;
+    background-image: url(/themes/bud/extra-images/images/jcarousel-prev.png) !important;
+    height: 51px;
+    width: 30px;
+  }
+
+  .owl-theme .owl-controls .owl-buttons div {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    text-indent: 999999px;
+  }
+
+  div#block-full-width {
+    clear: both;
+    background: #B82C28;
+  }
+
+  div#block-bud-page-title {
+    width: 960px;
+    margin: auto;
+  }
+
+  .node-page .page-title {
+    margin: 0;
+    font-weight: normal;
+    color: #FFF;
+  }
+
+  .node_background {
+    background: #FFFFFF;
+  }
+
+  div#block-languageswitchblock div {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+  }
+
+  div#block-languageswitchblock div a {
+    border: 1px solid #c4c4c4;
+    padding: 8px;
+    color: #6c6c6c;
+    border-radius: 4px;
+    text-shadow: 1px 1px #ffffff;
+    background: #f6f6f6 url(/themes/bud/images/button-bg.gif) left bottom repeat-x;
+    line-height: normal;
+    font-weight: normal;
+    font-size: 1em;
+  }
+
+  div#block-languageswitchblock {
+    background: #f8f8f8;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    margin-bottom: 40px;
+    clear: both;
+  }
+
+  aside.layout-3col__right-sidebar {
+    background: url(/themes/bud/images/sidebar-last-seperator.png) 10px top no-repeat;
+    padding-top: 40px;
+  }
+
+  aside.layout-3col__right-sidebar div, aside.layout-3col__right-sidebar nav {
+    padding-left: 10px;
+    margin-bottom: 15px;
+  }
+
+  .is-page-node-type-page aside.layout-3col__right-sidebar nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #444444;
+    padding: 6px 18px;
+    border-bottom: 1px solid #f2f2f2;
+    background: url(/themes/bud/images/list-style-arrow.png) 6px 11px no-repeat;
+  }
+
+  .button.red {
+    background-color: #E62727;
+  }
+
+  .is-page-node-type-page table.style1 th, .is-page-node-type-page table.style1 td {
+    padding: 2px 5px;
+  }
+
+  .is-page-node-type-page table.style1 td {
+    border-bottom: 1px solid #eee;
+  }
+
+  .is-page-node-type-page table.style1 th[scope="col"] {
+    background: #eee;
+    color: #333;
+    border-top: 1px solid #fff;
+    border-right: 1px dotted #ccc;
+    border-bottom: 1px solid #ddd;
+    vertical-align: bottom;
+  }
+
+  .is-page-node-type-page table.style1 {
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 1px 5px #666;
+    -khtml-box-shadow: 0px 1px 5px #666;
+    -moz-box-shadow: 0px 1px 5px #666;
+    -webkit-box-shadow: 0px 1px 5px #666;
+  }
+
+  .bud-youtube-item {
+    display: inline-block;
+    width: 175px;
+    height: 215px;
+    margin: 1em;
+    vertical-align: text-top;
+  }
+
+  .bud-youtube-desc {
+    text-align: center;
+  }
+
+  a:link, a:visited, li a.active, ul.pager a:link, ul.pager a:visited, .block .terms ul.links li a:link, .block .terms ul.links li a:visited {
+    color: #5c5c5c;
+    text-decoration: underline;
+  }
+
+  .breadcrumb a:link, .breadcrumb a:visited {
+    padding: 0px 14px 0px 0px;
+    margin-right: 9px;
+    display: block;
+    color: #cccccc;
+    float: left;
+    background: url(/themes/bud/images/breadcrumb_separator.png) right center no-repeat;
+  }
+
+  .breadcrumb {
+    padding-bottom: 0px;
+    width: auto;
+    padding: 0 0px;
+    line-height: 1.2em;
+    color: #999999;
+  }
+
+  div#bud-footer .block h2,
+  div#bud-footer .view-header h3 {
+    color: #FFF;
   }
 }
 
