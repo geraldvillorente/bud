@@ -165,4 +165,6 @@ function bud_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state
 
   $form['elements']['message']['#attributes']['placeholder'] = $form['elements']['message']['#title'];
   unset($form['elements']['message']['#title']);
+  // Add placeholder in search.
+  $form['keys']['#attributes']['placeholder'] = 'Search';
 }
