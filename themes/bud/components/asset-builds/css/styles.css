@@ -580,7 +580,7 @@ iPad 3
     color: #FFF;
   }
 
-  .button span {
+  .is-page-node-type-page .button span {
     position: relative;
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,0.25);
@@ -597,13 +597,13 @@ iPad 3
     text-decoration: none;
   }
 
-  .button.red {
+  .is-page-node-type-page .button.red {
     background-color: #E62727 !important;
     padding: 10px;
     border-radius: 4px;
   }
 
-  .button {
+  .is-page-node-type-page .button {
     white-space: nowrap;
     line-height: 1em;
     position: relative;
@@ -628,7 +628,8 @@ iPad 3
     margin-bottom: 10px;
   }
 
-  .button:hover, .button.hover {
+  .is-page-node-type-page .button:hover, 
+  .is-page-node-type-page .button.hover {
     background: -moz-linear-gradient(center top,rgba(255,255,255,.2) 0%,rgba(255,255,255,.1) 100%);
     background: -webkit-gradient(linear,center bottom,center top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.2)));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF',EndColorStr='#19FFFFFF');
