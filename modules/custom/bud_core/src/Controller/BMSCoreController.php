@@ -1,15 +1,15 @@
 <?php
 
-namespace Drupal\bms_core\Controller;
+namespace Drupal\bud_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Class BMSCoreController.
+ * Class BUDCoreController.
  *
- * @package Drupal\bms_core\Controller
+ * @package Drupal\bud_core\Controller
  */
-class BMSCoreController extends ControllerBase {
+class BUDCoreController extends ControllerBase {
 
   /**
    * Hello.

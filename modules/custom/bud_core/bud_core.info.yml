@@ -1,7 +1,7 @@
-name: bms_core
+name: BUD Core
 type: module
 description: Bud core module
 core: 8.x
 package: BUD
 libraries:
-  - bms_core/accordion
+  - bud_core/accordion

@@ -2,8 +2,8 @@ accordion:
   version: 1.x
   css:
     theme:
-      css/bms_core.css: {}
+      css/bud_core.css: {}
   js:
-    js/bms_core.js: {}
+    js/bud_core.js: {}
   dependencies:
     - core/jquery

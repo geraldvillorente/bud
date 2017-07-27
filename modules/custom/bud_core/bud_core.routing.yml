@@ -1,0 +1,7 @@
+bud_core.bud_core_controller:
+  path: '/bud_core/hello/{name}'
+  defaults:
+    _controller: '\Drupal\bud_core\Controller\BUDCoreController::hello'
+    _title: 'render'
+  requirements:
+    _permission: 'access content'

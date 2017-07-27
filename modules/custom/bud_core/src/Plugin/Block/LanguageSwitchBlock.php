@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\bms_core\Plugin\Block;
+namespace Drupal\bud_core\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
