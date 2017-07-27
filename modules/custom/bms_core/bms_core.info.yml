@@ -1,7 +1,0 @@
-name: bms_core
-type: module
-description: Bud core module
-core: 8.x
-package: BUD
-libraries:
-  - bms_core/accordion

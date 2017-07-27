@@ -1,0 +1,9 @@
+accordion:
+  version: 1.x
+  css:
+    theme:
+      css/bud_core.css: {}
+  js:
+    js/bud_core.js: {}
+  dependencies:
+    - core/jquery

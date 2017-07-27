@@ -1,9 +1,0 @@
-accordion:
-  version: 1.x
-  css:
-    theme:
-      css/bms_core.css: {}
-  js:
-    js/bms_core.js: {}
-  dependencies:
-    - core/jquery

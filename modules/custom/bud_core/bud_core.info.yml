@@ -1,0 +1,7 @@
+name: BUD Core
+type: module
+description: Bud core module
+core: 8.x
+package: BUD
+libraries:
+  - bud_core/accordion

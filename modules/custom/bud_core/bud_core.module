@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Contains bud_core.module.
+ */
+use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Routing\AdminContext;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+  /**
+  * Implements hook_help().
+  */
+  function bud_core_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+      // Main module help for the bud_core module.
+      case 'help.page.bud_core':
+        $output = '';
+        $output .= '<h3>' . t('About') . '</h3>';
+        $output .= '<p>' . t('Bud core module') . '</p>';
+        return $output;
+
+      default:
+    }
+  }
+
+function bud_core_theme($existing, $type, $theme, $path){
+  return array(
+      'language_switch' => array(
+        'variables' => array('links' => array()), 
+         'template' => 'block--language-switch'
+        ),
+    );
+}
