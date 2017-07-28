@@ -45,6 +45,16 @@
   #featured-footer {
     clear: both;
   }
+
+  /* Content */
+  .layout-3col__col-1 p img,
+  .layout-3col__col-2 p img,
+  .layout-3col__col-3 p img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin: 0px 15px 0px 0px;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
