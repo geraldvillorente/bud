@@ -26,6 +26,18 @@
   .layout-3col__full .flexslider {
     border: none;
   }
+
+  #superfish-main-toggle {
+    background: url(../../../images/burger_menu-256.png) no-repeat;
+    background-size: 48px;
+    height: 48px;
+    display: block;
+  }
+
+  #superfish-main-toggle span {
+    text-indent: -99999px;
+    display:inline-block;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
