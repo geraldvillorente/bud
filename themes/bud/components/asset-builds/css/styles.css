@@ -1,6 +1,31 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
+  body {
+    padding: 0 20px;
+  }
+
+  .layout-center,
+  .layout-3col,
+  .layout-3col__full {
+    padding: 0;
+  }
+
+  #toolbar-administration {
+    display: none;
+  }
+
+  .site-logo img {
+    width: 100% !important;
+  }
+
+  .flex-control-nav.flex-control-paging {
+    display: none;
+  }
+
+  .layout-3col__full .flexslider {
+    border: none;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -94,8 +119,8 @@ iPad 3
     display: none;
   }
 
-  .is-path-frontpage #block-introductionen div, 
-  .is-path-frontpage #block-frontblock1en div, 
+  .is-path-frontpage #block-introductionen div,
+  .is-path-frontpage #block-frontblock1en div,
   .is-path-frontpage #block-frontblock5en div {
     min-height: 295px;
   }
@@ -628,7 +653,7 @@ iPad 3
     margin-bottom: 10px;
   }
 
-  .is-page-node-type-page .button:hover, 
+  .is-page-node-type-page .button:hover,
   .is-page-node-type-page .button.hover {
     background: -moz-linear-gradient(center top,rgba(255,255,255,.2) 0%,rgba(255,255,255,.1) 100%);
     background: -webkit-gradient(linear,center bottom,center top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.2)));
