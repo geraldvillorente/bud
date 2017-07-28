@@ -1,16 +1,6 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
-  body {
-    padding: 0 20px;
-  }
-
-  .layout-center,
-  .layout-3col,
-  .layout-3col__full {
-    padding: 0;
-  }
-
   #toolbar-administration {
     display: none;
   }
@@ -32,6 +22,7 @@
     background-size: 48px;
     height: 48px;
     display: block;
+    background-position-x: -0.45em;
   }
 
   #superfish-main-toggle span {
