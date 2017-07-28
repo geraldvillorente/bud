@@ -9,14 +9,7 @@
     width: 100% !important;
   }
 
-  .flex-control-nav.flex-control-paging {
-    display: none;
-  }
-
-  .layout-3col__full .flexslider {
-    border: none;
-  }
-
+  /* Main menu */
   #superfish-main-toggle {
     background: url(../../../images/burger_menu-256.png) no-repeat;
     background-size: 48px;
@@ -30,8 +23,27 @@
     display:inline-block;
   }
 
+  /* Hero slide */
   .sf-clone-parent {
     display: none;
+  }
+
+  .views-field views-field-field-banner-image {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .layout-3col__full .flexslider {
+    border: none;
+  }
+
+  .flex-control-nav.flex-control-paging {
+    display: none;
+  }
+
+  /* Featured Footer */
+  #featured-footer {
+    clear: both;
   }
 }
 
