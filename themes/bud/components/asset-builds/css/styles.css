@@ -38,6 +38,10 @@
     text-indent: -99999px;
     display:inline-block;
   }
+
+  .sf-clone-parent {
+    display: none;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
