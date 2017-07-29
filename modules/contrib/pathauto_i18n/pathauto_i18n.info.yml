@@ -1,0 +1,14 @@
+name : 'Pathauto i18n'
+description : 'Provides the ability to add aliases for multilanguage content'
+# core: 8.x
+type: module
+
+dependencies:
+- pathauto
+- locale
+
+# Information added by Drupal.org packaging script on 2016-03-18
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'pathauto_i18n'
+datestamp: 1458316141
