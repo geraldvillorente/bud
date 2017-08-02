@@ -7,6 +7,10 @@
     padding-right: 20px
   }
 
+  .layout-center .header {
+    padding-bottom: 0.5em;
+  }
+
   .language-switcher-language-url,
   #toolbar-administration,
   body .language-switch-select-form label {
