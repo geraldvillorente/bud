@@ -1,8 +1,21 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
-  #toolbar-administration {
+  body .language-switch-select-form {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px
+  }
+
+  .language-switcher-language-url,
+  #toolbar-administration,
+  body .language-switch-select-form label {
     display: none;
+  }
+
+  body .language-switch-select-form select {
+    width: 100%;
+    padding: 0.5em 0;
   }
 
   .site-logo img {
@@ -757,4 +770,8 @@ iPad 3
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
 /* Styles */
+}
+
+.language-switch-select-form {
+  display: none;
 }
