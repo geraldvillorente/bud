@@ -1,0 +1,14 @@
+/**
+ * Settings.
+ */
+
+@mixin padding ($top: 25px, $right: 25px, $bottom: 25px, $left: 25px) {
+  padding: $top $right $bottom $left;
+}
+
+$bp-mobile-large-down:  "only screen and (max-width: 1223px)";
+$bp-mobile-medium-down: "only screen and (max-width: 1023px)";
+$bp-mobile-small-down:  "only screen and (max-width: 639px)";
+
+$bp-mobile-medium-only:  "only screen and (min-width: 640px) and (max-width: 1023px)";
+$bp-mobile-large-only:   "only screen and (min-width: 1024px) and (max-width: 1223px)";

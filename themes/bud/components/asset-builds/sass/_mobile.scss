@@ -1,0 +1,108 @@
+.layout-center {
+  @media #{$bp-mobile-large-down} {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+header {
+  @media #{$bp-mobile-large-down} {
+    text-align: center;
+  }
+
+  .site-logo img {
+    @media #{$bp-mobile-small-down} {
+      width: 100%;
+    }
+  }
+}
+
+// Hamburger.
+#superfish-main-toggle {
+  @media #{$bp-mobile-large-down} {
+    background: rgba(0, 0, 0, 0)
+      url("../../../images/burger_menu-256.png") 
+      no-repeat scroll -0.45em 0 / 48px auto;
+    display: block;
+    height: 48px;
+  }
+
+  > span {
+    @media #{$bp-mobile-large-down} {
+      display: none;
+    }
+  }
+}
+
+// Slider.
+#block-views-block-banner-block-1 {
+  @media #{$bp-mobile-medium-down} {
+    margin-top: 10px;
+  }
+  
+  .flexslider {
+    @media #{$bp-mobile-large-down} {
+      border: 0;
+      margin-bottom: 25px;
+    }
+  }
+
+  .flex-control-paging {
+    @media #{$bp-mobile-large-down} {
+      display: none;
+    }
+  }
+}
+
+.view-bud-carousel {
+  @media #{$bp-mobile-small-down} {
+  }
+}
+
+#featured-outer {
+  @media #{$bp-mobile-large-down} {
+    @include padding();
+  }
+}
+
+.content-wrapper {
+  @media #{$bp-mobile-large-down} {
+    display: flex;
+  }
+}
+
+#featured-footer {
+  @media #{$bp-mobile-large-down} {
+    @include padding();
+  }
+
+  img {
+    @media #{$bp-mobile-large-down} {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  img:last-child {
+    @media #{$bp-mobile-large-down} {
+      margin-top: 15px;
+    }
+  }
+}
+
+#bud-footer {
+  .layout-3col__col-1,
+  .layout-3col__col-2,
+  .layout-3col__col-3 {
+    @media #{$bp-mobile-large-down} {
+      @include padding();
+    }
+  }
+}
+
+#bottom-footer {
+  @media #{$bp-mobile-large-down} {
+    @include padding();
+  }
+}
