@@ -10,7 +10,7 @@
 // wrapping it with an "anonymous closure". See:
 // - https://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-(function (Drupal) {
+(function (Drupal, $) {
 
   'use strict';
 
@@ -20,6 +20,29 @@
 
       // Place your code here.
 
+      // Create the dropdown base.
+      $("<select />").appendTo("#language-switcher");
+
+      // Create default option "Switch language..."
+      $("<option />", {
+        "selected": "selected",
+        "value"   : "",
+        "text"    : "Switch language..."
+      }).appendTo("#language-switcher select");
+
+      // Populate dropdown with menu items.
+      $("#language-switcher a").each(function() {
+        var el = $(this);
+        $("<option />", {
+          "value"   : el.attr("href"),
+          "text"    : el.text()
+        }).appendTo("#language-switcher select");
+      });
+
+      // Go the link on change.
+      $("#language-switcher select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
     }
   };
 
@@ -28,4 +51,4 @@
   // jQuery, you should change (Drupal) to (Drupal, jQuery) in the line below
   // and, in this file's first line of JS, change function (Drupal) to
   // (Drupal, $)
-})(Drupal);
+})(Drupal, jQuery);
