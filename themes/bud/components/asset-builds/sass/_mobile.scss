@@ -148,8 +148,7 @@ header {
 }
 
 .view-bud-carousel {
-  @media #{$bp-mobile-small-down} {
-  }
+  @media #{$bp-mobile-small-down} {}
 }
 
 #featured-outer {
@@ -197,7 +196,9 @@ header {
 
 .is-page-node-type-page {
   h1.page-title {
-    font-size: 2rem;
+    @media #{$bp-mobile-large-down} {
+      font-size: 2rem;
+    }
   }
 
   #featured-outer {
