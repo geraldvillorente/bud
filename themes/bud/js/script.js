@@ -23,6 +23,9 @@
       // Create the dropdown base.
       $("<select />").appendTo("#language-switcher");
 
+      // Add class.
+      $("#language-switcher select").addClass("lang-dropdown");
+
       // Create default option "Switch language..."
       $("<option />", {
         "selected": "selected",
