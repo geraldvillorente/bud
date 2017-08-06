@@ -941,6 +941,37 @@ iPad 3
  */
 @media only screen and (max-width: 1223px) {
   /* line 1, ../sass/_mobile.scss */
+  #language-switcher {
+    padding: 25px 25px 25px 25px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 6, ../sass/_mobile.scss */
+  #language-switcher .language-switcher-language-url {
+    display: none;
+  }
+}
+/* line 12, ../sass/_mobile.scss */
+#language-switcher .lang-dropdown {
+  display: none;
+}
+@media only screen and (max-width: 1223px) {
+  /* line 12, ../sass/_mobile.scss */
+  #language-switcher .lang-dropdown {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 639px) {
+  /* line 12, ../sass/_mobile.scss */
+  #language-switcher .lang-dropdown {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1223px) {
+  /* line 27, ../sass/_mobile.scss */
   .layout-center {
     padding-left: 25px;
     padding-right: 25px;
@@ -948,20 +979,20 @@ iPad 3
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 8, ../sass/_mobile.scss */
+  /* line 34, ../sass/_mobile.scss */
   header {
     text-align: center;
   }
 }
 @media only screen and (max-width: 639px) {
-  /* line 13, ../sass/_mobile.scss */
+  /* line 39, ../sass/_mobile.scss */
   header .site-logo img {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 21, ../sass/_mobile.scss */
+  /* line 47, ../sass/_mobile.scss */
   #superfish-main-toggle {
     background: transparent url("../../../images/burger_menu-256.png") no-repeat scroll -0.45em 0/48px auto;
     display: block;
@@ -969,54 +1000,116 @@ iPad 3
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 30, ../sass/_mobile.scss */
+  /* line 56, ../sass/_mobile.scss */
   #superfish-main-toggle > span {
     display: none;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  /* line 38, ../sass/_mobile.scss */
+  /* line 64, ../sass/_mobile.scss */
   #block-views-block-banner-block-1 {
     margin-top: 10px;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 43, ../sass/_mobile.scss */
+  /* line 69, ../sass/_mobile.scss */
   #block-views-block-banner-block-1 .flexslider {
     border: 0;
     margin-bottom: 25px;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 50, ../sass/_mobile.scss */
+  /* line 76, ../sass/_mobile.scss */
   #block-views-block-banner-block-1 .flex-control-paging {
     display: none;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 62, ../sass/_mobile.scss */
+  /* line 84, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 90, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 .owl-item:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 96, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 .owl-prev,
+  #block-views-block-bud-carousel-block-1 .owl-next {
+    background-color: transparent;
+    background-size: 100% 100%;
+    color: transparent;
+    height: 60px;
+    width: 25px;
+    position: absolute;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 108, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 .owl-prev {
+    background-image: url("/themes/bud/extra-images/images/jcarousel-prev.png");
+    left: -35px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 115, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 .owl-next {
+    background-image: url("/themes/bud/extra-images/images/jcarousel-next.png");
+    right: -35px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 122, ../sass/_mobile.scss */
+  #block-views-block-bud-carousel-block-1 .owl-controls {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1223px) {
+  /* line 131, ../sass/_mobile.scss */
+  .is-path-frontpage .content-wrapper > div {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 137, ../sass/_mobile.scss */
+  .is-path-frontpage .content-wrapper > div h2 {
+    font-size: 1.75em;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 143, ../sass/_mobile.scss */
+  .is-path-frontpage .content-wrapper > div .block {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 1223px) {
+  /* line 155, ../sass/_mobile.scss */
   #featured-outer {
     padding: 25px 25px 25px 25px;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 68, ../sass/_mobile.scss */
-  .content-wrapper {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 1223px) {
-  /* line 74, ../sass/_mobile.scss */
+  /* line 161, ../sass/_mobile.scss */
   #featured-footer {
     padding: 25px 25px 25px 25px;
+    clear: both;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 79, ../sass/_mobile.scss */
+  /* line 167, ../sass/_mobile.scss */
   #featured-footer img {
     display: block;
     margin-left: auto;
@@ -1024,14 +1117,14 @@ iPad 3
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 87, ../sass/_mobile.scss */
+  /* line 175, ../sass/_mobile.scss */
   #featured-footer img:last-child {
     margin-top: 15px;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 95, ../sass/_mobile.scss */
+  /* line 183, ../sass/_mobile.scss */
   #bud-footer .layout-3col__col-1,
   #bud-footer .layout-3col__col-2,
   #bud-footer .layout-3col__col-3 {
@@ -1040,8 +1133,86 @@ iPad 3
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 104, ../sass/_mobile.scss */
+  /* line 192, ../sass/_mobile.scss */
   #bottom-footer {
     padding: 25px 25px 25px 25px;
+  }
+}
+
+/* line 199, ../sass/_mobile.scss */
+.is-page-node-type-page h1.page-title {
+  font-size: 2rem;
+}
+@media only screen and (max-width: 1223px) {
+  /* line 203, ../sass/_mobile.scss */
+  .is-page-node-type-page #featured-outer {
+    padding: 25px 0;
+    clear: both;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 210, ../sass/_mobile.scss */
+  .is-page-node-type-page .node_background .field--name-body h3 {
+    font-size: 190%;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 216, ../sass/_mobile.scss */
+  .is-page-node-type-page #block-supportlogosen {
+    margin-top: 25px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 223, ../sass/_mobile.scss */
+  .is-page-node-type-page #block-supportlogosen p {
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 229, ../sass/_mobile.scss */
+  .is-page-node-type-page .bud-youtube-item {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  /* line 236, ../sass/_mobile.scss */
+  .is-page-node-type-page iframe {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1223px) {
+  /* line 244, ../sass/_mobile.scss */
+  .is-path-calendar-date #block-supportlogosen {
+    margin-top: 25px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 251, ../sass/_mobile.scss */
+  .is-path-calendar-date #block-supportlogosen p {
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  /* line 259, ../sass/_mobile.scss */
+  .is-page-node-type-date iframe {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 265, ../sass/_mobile.scss */
+  .is-page-node-type-date #block-supportlogosen {
+    margin-top: 25px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1223px) {
+  /* line 272, ../sass/_mobile.scss */
+  .is-page-node-type-date #block-supportlogosen p {
+    margin-bottom: 25px;
   }
 }
