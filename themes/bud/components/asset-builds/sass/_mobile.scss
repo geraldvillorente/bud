@@ -297,6 +297,8 @@ header {
   .node_background {
     @media #{$bp-mobile-large-down} {
       background: #ffffff none repeat scroll 0 0;
+      margin: -25px;
+      padding: 25px;
     }
   }
 
@@ -507,5 +509,49 @@ div#language-switcher {
   @media #{$bp-mobile-large-down} {
     background-color: #6998A5;
     margin-bottom: 30px;
+  }
+}
+
+// Buttons.
+.is-page-node-type-page .button {
+  @media #{$bp-mobile-large-down} {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-user-select: none;
+    background: rgba(0, 0, 0, 0) linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%) repeat scroll 0 0;
+    border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.4);
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    line-height: 1em;
+    margin-bottom: 10px;
+    outline: medium none;
+    overflow: visible;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  @media #{$bp-mobile-small-down} {
+    width: 100%;
+  }
+
+  &.red {
+    @media #{$bp-mobile-large-down} {
+      background-color: #E62727 !important;
+      padding: 10px;
+      border-radius: 4px;
+      color: white;
+    }
+  }
+}
+
+// Search input.
+input.form-search {
+  @media #{$bp-mobile-small-down} {
+    width: 100%;
   }
 }
