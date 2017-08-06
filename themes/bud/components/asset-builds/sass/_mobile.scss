@@ -106,3 +106,15 @@ header {
     @include padding();
   }
 }
+
+.is-page-node-type-page {
+  h1.page-title {
+    font-size: 2rem;
+  }
+
+  #featured-outer {
+    @media #{$bp-mobile-large-down} {
+      padding: 25px 0;
+    }
+  }
+}
