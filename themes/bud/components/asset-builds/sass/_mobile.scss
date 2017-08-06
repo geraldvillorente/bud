@@ -1,3 +1,29 @@
+#language-switcher {
+  @media #{$bp-mobile-large-down} {
+    @include padding();
+  }
+
+  .language-switcher-language-url {
+    @media #{$bp-mobile-large-down} {
+      display: none;
+    }
+  }
+
+  .lang-dropdown {
+    display: none;
+
+    @media #{$bp-mobile-large-down} {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media #{$bp-mobile-small-down} {
+      width: 100%;
+    }
+  }
+}
+
 .layout-center {
   @media #{$bp-mobile-large-down} {
     padding-left: 25px;
