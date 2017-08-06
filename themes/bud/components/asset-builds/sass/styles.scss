@@ -713,6 +713,32 @@ iPad 3
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF',EndColorStr='#19FFFFFF');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF',EndColorStr='#19FFFFFF')";
   }
+
+  h1.popup-message-title {
+    margin-top: 0;
+  }
+
+  div#popup-message-content {
+    width: 965px;
+  }
+
+  div#popup-message-window br {
+    display: none;
+  }
+
+  .owl-item {
+    width: auto !important;
+  }
+
+  ul.js-pager__items {
+    padding: 0;
+  }
+
+  div#block-views-block-content-field-date-on-calendar-block-1 .view-header h3 {
+    margin: auto;
+    display: block;
+    width: 180px;
+  }
 }
 
 /* Large screens ----------- */

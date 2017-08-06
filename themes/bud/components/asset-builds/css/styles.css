@@ -812,6 +812,38 @@ iPad 3
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF',EndColorStr='#19FFFFFF');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF',EndColorStr='#19FFFFFF')";
   }
+
+  /* line 717, ../sass/styles.scss */
+  h1.popup-message-title {
+    margin-top: 0;
+  }
+
+  /* line 721, ../sass/styles.scss */
+  div#popup-message-content {
+    width: 965px;
+  }
+
+  /* line 725, ../sass/styles.scss */
+  div#popup-message-window br {
+    display: none;
+  }
+
+  /* line 729, ../sass/styles.scss */
+  .owl-item {
+    width: auto !important;
+  }
+
+  /* line 733, ../sass/styles.scss */
+  ul.js-pager__items {
+    padding: 0;
+  }
+
+  /* line 737, ../sass/styles.scss */
+  div#block-views-block-content-field-date-on-calendar-block-1 .view-header h3 {
+    margin: auto;
+    display: block;
+    width: 180px;
+  }
 }
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {
@@ -866,7 +898,7 @@ iPad 3
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
   /* Styles */
 }
-/* line 786, ../sass/styles.scss */
+/* line 812, ../sass/styles.scss */
 .language-switch-select-form {
   display: none;
 }
