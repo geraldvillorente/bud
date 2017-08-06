@@ -1095,21 +1095,21 @@ iPad 3
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 155, ../sass/_mobile.scss */
+  /* line 154, ../sass/_mobile.scss */
   #featured-outer {
     padding: 25px 25px 25px 25px;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 161, ../sass/_mobile.scss */
+  /* line 160, ../sass/_mobile.scss */
   #featured-footer {
     padding: 25px 25px 25px 25px;
     clear: both;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 167, ../sass/_mobile.scss */
+  /* line 166, ../sass/_mobile.scss */
   #featured-footer img {
     display: block;
     margin-left: auto;
@@ -1117,14 +1117,14 @@ iPad 3
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 175, ../sass/_mobile.scss */
+  /* line 174, ../sass/_mobile.scss */
   #featured-footer img:last-child {
     margin-top: 15px;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 183, ../sass/_mobile.scss */
+  /* line 182, ../sass/_mobile.scss */
   #bud-footer .layout-3col__col-1,
   #bud-footer .layout-3col__col-2,
   #bud-footer .layout-3col__col-3 {
@@ -1133,85 +1133,87 @@ iPad 3
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 192, ../sass/_mobile.scss */
+  /* line 191, ../sass/_mobile.scss */
   #bottom-footer {
     padding: 25px 25px 25px 25px;
   }
 }
 
-/* line 199, ../sass/_mobile.scss */
-.is-page-node-type-page h1.page-title {
-  font-size: 2rem;
+@media only screen and (max-width: 1223px) {
+  /* line 198, ../sass/_mobile.scss */
+  .is-page-node-type-page h1.page-title {
+    font-size: 2rem;
+  }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 203, ../sass/_mobile.scss */
+  /* line 204, ../sass/_mobile.scss */
   .is-page-node-type-page #featured-outer {
     padding: 25px 0;
     clear: both;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 210, ../sass/_mobile.scss */
+  /* line 211, ../sass/_mobile.scss */
   .is-page-node-type-page .node_background .field--name-body h3 {
     font-size: 190%;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 216, ../sass/_mobile.scss */
+  /* line 217, ../sass/_mobile.scss */
   .is-page-node-type-page #block-supportlogosen {
     margin-top: 25px;
     text-align: center;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 223, ../sass/_mobile.scss */
+  /* line 224, ../sass/_mobile.scss */
   .is-page-node-type-page #block-supportlogosen p {
     margin-bottom: 25px;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 229, ../sass/_mobile.scss */
+  /* line 230, ../sass/_mobile.scss */
   .is-page-node-type-page .bud-youtube-item {
     margin-bottom: 25px;
     text-align: center;
   }
 }
 @media only screen and (max-width: 1023px) {
-  /* line 236, ../sass/_mobile.scss */
+  /* line 237, ../sass/_mobile.scss */
   .is-page-node-type-page iframe {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 1223px) {
-  /* line 244, ../sass/_mobile.scss */
+  /* line 245, ../sass/_mobile.scss */
   .is-path-calendar-date #block-supportlogosen {
     margin-top: 25px;
     text-align: center;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 251, ../sass/_mobile.scss */
+  /* line 252, ../sass/_mobile.scss */
   .is-path-calendar-date #block-supportlogosen p {
     margin-bottom: 25px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  /* line 259, ../sass/_mobile.scss */
+  /* line 260, ../sass/_mobile.scss */
   .is-page-node-type-date iframe {
     width: 100%;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 265, ../sass/_mobile.scss */
+  /* line 266, ../sass/_mobile.scss */
   .is-page-node-type-date #block-supportlogosen {
     margin-top: 25px;
     text-align: center;
   }
 }
 @media only screen and (max-width: 1223px) {
-  /* line 272, ../sass/_mobile.scss */
+  /* line 273, ../sass/_mobile.scss */
   .is-page-node-type-date #block-supportlogosen p {
     margin-bottom: 25px;
   }
