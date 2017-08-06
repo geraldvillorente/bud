@@ -137,4 +137,53 @@ header {
       margin-bottom: 25px;
     }
   }
+
+  .bud-youtube-item {
+    @media #{$bp-mobile-large-down} {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  }
+
+  iframe {
+    @media #{$bp-mobile-medium-down} {
+      width: 100%
+    }
+  }
+}
+
+.is-path-calendar-date {
+  #block-supportlogosen {
+    @media #{$bp-mobile-large-down} {
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+
+  #block-supportlogosen p {
+    @media #{$bp-mobile-large-down} {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.is-page-node-type-date {
+  iframe {
+    @media #{$bp-mobile-medium-down} {
+      width: 100%
+    }
+  }
+
+  #block-supportlogosen {
+    @media #{$bp-mobile-large-down} {
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+
+  #block-supportlogosen p {
+    @media #{$bp-mobile-large-down} {
+      margin-bottom: 25px;
+    }
+  }
 }
