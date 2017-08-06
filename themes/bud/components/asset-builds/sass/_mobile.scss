@@ -115,6 +115,26 @@ header {
   #featured-outer {
     @media #{$bp-mobile-large-down} {
       padding: 25px 0;
+      clear: both;
+    }
+  }
+
+  .node_background .field--name-body h3 {
+    @media #{$bp-mobile-large-down} {
+      font-size: 190%;
+    }
+  }
+
+  #block-supportlogosen {
+    @media #{$bp-mobile-large-down} {
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+
+  #block-supportlogosen p {
+    @media #{$bp-mobile-large-down} {
+      margin-bottom: 25px;
     }
   }
 }
