@@ -46,6 +46,13 @@
       $("#language-switcher select").change(function() {
         window.location = $(this).find("option:selected").val();
       });
+
+      // Remove all empty `p` tags.
+      $('p').each(function() {
+        var $this = $(this);
+        if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+          $this.remove();
+      });
     }
   };
 
