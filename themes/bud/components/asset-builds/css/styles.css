@@ -1021,14 +1021,14 @@ iPad 3
 @media only screen and (max-width: 1223px) {
   /* line 108, ../sass/_mobile.scss */
   #block-views-block-bud-carousel-block-1 .owl-prev {
-    background-image: url("/themes/bud/extra-images/images/jcarousel-prev.png");
+    background-image: url("../../../extra-images/images/jcarousel-prev.png");
     left: -35px;
   }
 }
 @media only screen and (max-width: 1223px) {
   /* line 115, ../sass/_mobile.scss */
   #block-views-block-bud-carousel-block-1 .owl-next {
-    background-image: url("/themes/bud/extra-images/images/jcarousel-next.png");
+    background-image: url("../../../extra-images/images/jcarousel-next.png");
     right: -35px;
   }
 }
@@ -1103,7 +1103,7 @@ iPad 3
     display: block;
     color: #cccccc;
     float: left;
-    background: url(/themes/bud/images/breadcrumb_separator.png) right center no-repeat;
+    background: url("../../../images/breadcrumb_separator.png") right center no-repeat;
   }
 }
 @media only screen and (max-width: 1223px) {
@@ -1175,7 +1175,7 @@ iPad 3
 @media only screen and (max-width: 1223px) {
   /* line 258, ../sass/_mobile.scss */
   #bud-footer-inner {
-    background: transparent url("/themes/bud/images/footer-glow-bg.png") repeat-x scroll center top;
+    background: transparent url("../../../images/footer-glow-bg.png") repeat-x scroll center top;
     overflow: hidden;
   }
 }
@@ -1183,7 +1183,7 @@ iPad 3
 @media only screen and (max-width: 1223px) {
   /* line 267, ../sass/_mobile.scss */
   #bud-footer-sub-inner {
-    background: transparent url("/themes/bud/images/footer-top-shadow.png") repeat-x scroll left top;
+    background: transparent url("../../../images/footer-top-shadow.png") repeat-x scroll left top;
     overflow: hidden;
   }
 }
@@ -1344,14 +1344,14 @@ iPad 3
   /* line 429, ../sass/_mobile.scss */
   div#featured-outer {
     clear: both;
-    background: url(/themes/bud/images/featured2-shadow.png) left bottom repeat-x;
+    background: url("../../../images/featured2-shadow.png") left bottom repeat-x;
   }
 }
 
 @media only screen and (max-width: 1223px) {
   /* line 436, ../sass/_mobile.scss */
   div#featured {
-    background: url(/themes/bud/images/featured2-bg.png) left top repeat;
+    background: url("../../../images/featured2-bg.png") left top repeat;
   }
 }
 
@@ -1366,14 +1366,14 @@ iPad 3
 @media only screen and (max-width: 1223px) {
   /* line 449, ../sass/_mobile.scss */
   div#featured-inner {
-    background: url(/themes/bud/images/featured2-top-bg.png) left top repeat-x;
+    background: url("../../../images/featured2-top-bg.png") left top repeat-x;
   }
 }
 
 @media only screen and (max-width: 1223px) {
   /* line 455, ../sass/_mobile.scss */
   div#featured-sub-inner {
-    background: url(/themes/bud/images/featured2-bottom-bg.png) left bottom repeat-x;
+    background: url("../../../images/featured2-bottom-bg.png") left bottom repeat-x;
     padding: 14px 0 18px;
   }
 }
@@ -1383,7 +1383,7 @@ iPad 3
   div#featured-bg {
     float: left;
     width: 100%;
-    background: url(/themes/bud/images/featured-pattern-bg.png);
+    background: url("../../../images/featured-pattern-bg.png");
   }
 }
 
@@ -1404,7 +1404,7 @@ iPad 3
     float: left;
     width: 100%;
     clear: both;
-    background-image: url(/themes/bud/images/featured-gr-bg.png);
+    background-image: url("../../../images/featured-gr-bg.png");
     background-repeat: repeat-y;
     background-position: center top;
   }
@@ -1423,7 +1423,7 @@ iPad 3
   div#language-switcher {
     float: left;
     width: 100%;
-    background: url(/themes/bud/images/featured-pattern-bg.png);
+    background: url("../../../images/featured-pattern-bg.png");
   }
 }
 
