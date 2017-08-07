@@ -147,10 +147,8 @@ header {
   }
 
   .block img {
-    @media #{$bp-mobile-large-down} {
-      float: left;
-      margin-right: 10px;
-    }
+    float: left;
+    margin-right: 10px;
   }
 }
 
