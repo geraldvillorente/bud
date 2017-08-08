@@ -13,6 +13,8 @@ $bp-mobile-small-down:  "only screen and (max-width: 639px)";
 $bp-mobile-medium-only:  "only screen and (min-width: 640px) and (max-width: 1023px)";
 $bp-mobile-large-only:   "only screen and (min-width: 1024px) and (max-width: 1223px)";
 
+$bp-desktop-only:        "only screen and (min-width: 1224px)";
+
 /**
  * Mixin to display flex.
  */
