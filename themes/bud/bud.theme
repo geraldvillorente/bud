@@ -153,6 +153,10 @@ function bud_views_pre_render(ViewExecutable $view) {
  * Implements hook_form_alter().
  */
 function bud_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //Get the lanuage code:
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // Default to zh-hant
+  $search = '搜尋';
   // Add placeholder.
   $form['elements']['name']['#attributes']['placeholder'] = $form['elements']['name']['#title'];
   unset($form['elements']['name']['#title']);
@@ -165,6 +169,14 @@ function bud_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state
 
   $form['elements']['message']['#attributes']['placeholder'] = $form['elements']['message']['#title'];
   unset($form['elements']['message']['#title']);
+  // Switch language.
+  if ($language == 'zh-hans') {
+    $search = '搜寻';
+  }
+  else if ($language = 'en') {
+    $search = 'Search';
+  }
+
   // Add placeholder in search.
-  $form['keys']['#attributes']['placeholder'] = 'Search';
+  $form['keys']['#attributes']['placeholder'] = $search;
 }
