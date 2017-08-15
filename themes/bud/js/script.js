@@ -53,6 +53,16 @@
         if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
           $this.remove();
       });
+
+      // Main menu parent item, to remain in hovered state when child items are
+      // hovered.
+      $("#superfish-main .sf-depth-2").hover(
+        function() {
+          $(this).parent().prev().addClass("sf-child-is-hovered");
+        }, function() {
+          $(this).parent().prev().removeClass("sf-child-is-hovered");
+        }
+      );
     }
   };
 
