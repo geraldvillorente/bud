@@ -2,6 +2,7 @@
 
 namespace Drupal\webform\Entity;
 
+use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
@@ -17,8 +18,8 @@ use Drupal\webform\Plugin\WebformElement\WebformManagedFileBase;
 use Drupal\webform\Plugin\WebformElement\WebformWizardPage;
 use Drupal\webform\Utility\WebformElementHelper;
 use Drupal\webform\Utility\WebformReflectionHelper;
-use Drupal\webform\WebformHandlerInterface;
-use Drupal\webform\WebformHandlerPluginCollection;
+use Drupal\webform\Plugin\WebformHandlerInterface;
+use Drupal\webform\Plugin\WebformHandlerPluginCollection;
 use Drupal\webform\WebformInterface;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\webform\WebformSubmissionStorageInterface;
@@ -93,7 +94,6 @@ use Drupal\webform\WebformSubmissionStorageInterface;
  *   lookup_keys = {
  *     "status",
  *     "template",
- *     "category",
  *   },
  * )
  */
@@ -216,7 +216,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
   /**
    * Holds the collection of webform handlers that are used by this webform.
    *
-   * @var \Drupal\webform\WebformHandlerPluginCollection
+   * @var \Drupal\webform\Plugin\WebformHandlerPluginCollection
    */
   protected $handlersCollection;
 
@@ -689,6 +689,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
    */
   public static function getDefaultSettings() {
     return [
+      'ajax' => FALSE,
       'page' => TRUE,
       'page_submit_path' => '',
       'page_confirm_path' => '',
@@ -702,13 +703,18 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       'form_convert_anonymous' => FALSE,
       'form_prepopulate' => FALSE,
       'form_prepopulate_source_entity' => FALSE,
+      'form_prepopulate_source_entity_required' => FALSE,
+      'form_prepopulate_source_entity_type' => FALSE,
+      'form_reset' => FALSE,
       'form_disable_autocomplete' => FALSE,
       'form_novalidate' => FALSE,
       'form_unsaved' => FALSE,
       'form_disable_back' => FALSE,
       'form_autofocus' => FALSE,
       'form_details_toggle' => FALSE,
+      'submission_label' => '',
       'submission_log' => FALSE,
+      'submission_user_columns' => [],
       'wizard_progress_bar' => TRUE,
       'wizard_progress_pages' => FALSE,
       'wizard_progress_percentage' => FALSE,
@@ -719,11 +725,15 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       'preview_label' => '',
       'preview_title' => '',
       'preview_message' => '',
-      'draft' => self::DRAFT_ENABLED_NONE,
+      'preview_attributes' => [],
+      'preview_excluded_elements' => [],
+      'preview_exclude_empty' => TRUE,
+      'draft' => self::DRAFT_NONE,
+      'draft_multiple' => FALSE,
       'draft_auto_save' => FALSE,
       'draft_saved_message' => '',
       'draft_loaded_message' => '',
-      'confirmation_type' => 'page',
+      'confirmation_type' => WebformInterface::CONFIRMATION_PAGE,
       'confirmation_title' => '',
       'confirmation_message' => '',
       'confirmation_url' => '',
@@ -756,34 +766,42 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
           'authenticated',
         ],
         'users' => [],
+        'permissions' => [],
       ],
       'view_any' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'update_any' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'delete_any' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'purge_any' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'view_own' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'update_own' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
       'delete_own' => [
         'roles' => [],
         'users' => [],
+        'permissions' => [],
       ],
     ];
   }
@@ -841,6 +859,8 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
    *
    * @return bool
    *   The access result. Returns a TRUE if access is allowed.
+   *
+   * @see \Drupal\webform\Plugin\WebformElementBase::checkAccessRule
    */
   protected function checkAccessRule(array $access_rule, AccountInterface $account) {
     if (!empty($access_rule['roles']) && array_intersect($access_rule['roles'], $account->getRoles())) {
@@ -849,9 +869,15 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
     elseif (!empty($access_rule['users']) && in_array($account->id(), $access_rule['users'])) {
       return TRUE;
     }
-    else {
-      return FALSE;
+    elseif (!empty($access_rule['permissions'])) {
+      foreach ($access_rule['permissions'] as $permission) {
+        if ($account->hasPermission($permission)) {
+          return TRUE;
+        }
+      }
     }
+
+    return FALSE;
   }
 
   /**
@@ -955,7 +981,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       return $elements;
     }
 
-    /** @var \Drupal\webform\WebformElementManagerInterface $element_manager */
+    /** @var \Drupal\webform\Plugin\WebformElementManagerInterface $element_manager */
     $element_manager = \Drupal::service('plugin.manager.webform.element');
     foreach ($elements as $key => $element) {
       $element_handler = $element_manager->getElementInstance($element);
@@ -970,7 +996,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
    * {@inheritdoc}
    */
   public function getElementsSelectorOptions() {
-    /** @var \Drupal\webform\WebformElementManagerInterface $element_manager */
+    /** @var \Drupal\webform\Plugin\WebformElementManagerInterface $element_manager */
     $element_manager = \Drupal::service('plugin.manager.webform.element');
 
     $selectors = [];
@@ -1018,7 +1044,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       // If current webform is translated, load the base (default) webform and apply
       // the translation to the elements.
       if ($config_translation && $this->langcode != $language_manager->getCurrentLanguage()->getId()) {
-        $elements = $translation_manager->getConfigElements($this);
+        $elements = $translation_manager->getElements($this);
         $this->elementsTranslations = Yaml::decode($this->elements);
       }
       else {
@@ -1077,7 +1103,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
    *   The element's depth.
    */
   protected function initElementsRecursive(array &$elements, $parent = '', $depth = 0) {
-    /** @var \Drupal\webform\WebformElementManagerInterface $element_manager */
+    /** @var \Drupal\webform\Plugin\WebformElementManagerInterface $element_manager */
     $element_manager = \Drupal::service('plugin.manager.webform.element');
 
     // Remove ignored properties.
@@ -1113,7 +1139,14 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
         // Set #parent_flexbox to TRUE is the parent element is a
         // 'webform_flexbox'.
         $element['#webform_parent_flexbox'] = (isset($parent_element['#type']) && $parent_element['#type'] == 'webform_flexbox') ? TRUE : FALSE;
+
+        $element['#webform_parents'] = $parent_element['#webform_parents'];
       }
+
+      // Add element key to parents.
+      // #webform_parents allows make it possible to use NestedArray::getValue
+      // to get the entire unflattened element.
+      $element['#webform_parents'][] = $key;
 
       // Set #title and #admin_title to NULL if it is not defined.
       $element += [
@@ -1126,12 +1159,21 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
         $element['#access'] = $this->access('submission_view_any');
       }
 
+      // Set #markup type to 'webform_markup' to trigger #display_on behavior.
+      // @see https://www.drupal.org/node/2036237
+      if (empty($element['#type']) && empty($element['#theme']) && isset($element['#markup'])) {
+        $element['#type'] = 'webform_markup';
+      }
+
       $element_handler = NULL;
       if (isset($element['#type'])) {
         // Load the element's handler.
         $element_handler = $element_manager->getElementInstance($element);
 
         // Initialize the element.
+        // Note: Composite sub elements are initialized via
+        // \Drupal\webform\Plugin\WebformElement\WebformCompositeBase::initialize
+        // and stored in the '#webform_composite_elements' property.
         $element_handler->initialize($element);
 
         // Track managed file upload.
@@ -1169,7 +1211,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       // Check if element has value (aka can be exported) and add it to
       // flattened has value array.
       if ($element_handler && $element_handler->isInput($element)) {
-        $this->elementsInitializedFlattenedAndHasValue[$key] =& $this->elementsInitializedAndFlattened[$key];
+        $this->elementsInitializedFlattenedAndHasValue[$key] = &$this->elementsInitializedAndFlattened[$key];
       }
 
       $this->initElementsRecursive($element, $key, $depth + 1);
@@ -1179,9 +1221,16 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
   /**
    * {@inheritdoc}
    */
-  public function getElement($key) {
+  public function getElement($key, $include_children = FALSE) {
     $elements_flattened = $this->getElementsInitializedAndFlattened();
-    return (isset($elements_flattened[$key])) ? $elements_flattened[$key] : NULL;
+    $element = (isset($elements_flattened[$key])) ? $elements_flattened[$key] : NULL;
+    if ($element && $include_children) {
+      $elements = $this->getElementsInitialized();
+      return NestedArray::getValue($elements, $element['#webform_parents']);
+    }
+    else {
+      return $element;
+    }
   }
 
   /**
@@ -1365,18 +1414,18 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
     if ($settings['preview'] != DRUPAL_DISABLED) {
       // If there is no start page, we must define one.
       if (empty($this->pages)) {
-        $this->pages['start'] = [
+        $this->pages['webform_start'] = [
           '#title' => $this->getSetting('wizard_start_label', TRUE),
         ];
       }
-      $this->pages['preview'] = [
+      $this->pages['webform_preview'] = [
         '#title' => $this->getSetting('preview_label', TRUE),
       ];
     }
 
     // Only add complete page, if there are some pages.
     if ($this->pages && $this->getSetting('wizard_complete')) {
-      $this->pages['complete'] = [
+      $this->pages['webform_complete'] = [
         '#title' => $this->getSetting('wizard_complete_label', TRUE),
       ];
     }
@@ -1399,7 +1448,14 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
     /** @var \Drupal\webform\WebformInterface $duplicate */
     $duplicate = parent::createDuplicate();
 
-    // If template, clear the  description and remove the template flag.
+    // Clear path aliases, which must be unique.
+    $duplicate->setSetting('page_submit_path', '');
+    $duplicate->setSetting('page_confirm_path', '');
+
+    // Update owner to current user.
+    $duplicate->setOwnerId(\Drupal::currentUser()->id());
+    
+    // If template, clear the description and remove the template flag.
     if ($duplicate->isTemplate()) {
       $duplicate->set('description', '');
       $duplicate->set('template', FALSE);
@@ -1567,26 +1623,28 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       return;
     }
 
+    $submit_base_path = $this->settings['page_submit_path'] ?: trim(\Drupal::config('webform.settings')->get('settings.default_page_base_path'), '/') . '/' . str_replace('_', '-', $this->id());
+    $submit_base_path = '/' . trim($submit_base_path, '/');
+
     // Update submit path.
-    $submit_path = $this->settings['page_submit_path'] ?: trim(\Drupal::config('webform.settings')->get('settings.default_page_base_path'), '/') . '/' . str_replace('_', '-', $this->id());
-    $submit_source = '/webform/' . $this->id();
-    $submit_alias = '/' . trim($submit_path, '/');
-    $this->updatePath($submit_source, $submit_alias, $this->langcode);
-    $this->updatePath($submit_source, $submit_alias, LanguageInterface::LANGCODE_NOT_SPECIFIED);
+    $submit_suffixes = [
+      '',
+      '/submissions',
+      '/drafts',
+    ];
+    foreach ($submit_suffixes as $submit_suffix) {
+      $submit_source = '/webform/' . $this->id() . $submit_suffix;
+      $submit_alias = $submit_base_path . $submit_suffix;
+      $this->updatePath($submit_source, $submit_alias, $this->langcode);
+      $this->updatePath($submit_source, $submit_alias, LanguageInterface::LANGCODE_NOT_SPECIFIED);
+    }
 
     // Update confirm path.
-    $confirm_path = $this->settings['page_confirm_path'] ?:  $submit_path . '/confirmation';
     $confirm_source = '/webform/' . $this->id() . '/confirmation';
-    $confirm_alias = '/' . trim($confirm_path, '/');
+    $confirm_alias = $this->settings['page_confirm_path'] ?:  $submit_base_path . '/confirmation';
+    $confirm_alias = '/' . trim($confirm_alias, '/');
     $this->updatePath($confirm_source, $confirm_alias, $this->langcode);
     $this->updatePath($confirm_source, $confirm_alias, LanguageInterface::LANGCODE_NOT_SPECIFIED);
-
-    // Update submissions path.
-    $submissions_path = $submit_path . '/submissions';
-    $submissions_source = '/webform/' . $this->id() . '/submissions';
-    $submissions_alias = '/' . trim($submissions_path, '/');
-    $this->updatePath($submissions_source, $submissions_alias, $this->langcode);
-    $this->updatePath($submissions_source, $submissions_alias, LanguageInterface::LANGCODE_NOT_SPECIFIED);
   }
 
   /**
@@ -1646,7 +1704,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
   public function getHandlers($plugin_id = NULL, $status = NULL, $results = NULL, $submission = NULL) {
     if (!$this->handlersCollection) {
       $this->handlersCollection = new WebformHandlerPluginCollection($this->getWebformHandlerPluginManager(), $this->handlers);
-      /** @var \Drupal\webform\WebformHandlerBase $handler */
+      /** @var \Drupal\webform\Plugin\WebformHandlerBase $handler */
       foreach ($this->handlersCollection as $handler) {
         // Initialize the handler and pass in the webform.
         $handler->setWebform($this);
@@ -1654,12 +1712,12 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
       $this->handlersCollection->sort();
     }
 
-    /** @var \Drupal\webform\WebformHandlerPluginCollection $handlers */
+    /** @var \Drupal\webform\Plugin\WebformHandlerPluginCollection $handlers */
     $handlers = $this->handlersCollection;
 
     // Clone the handlers if they are being filtered.
     if (isset($plugin_id) || isset($status) || isset($results)) {
-      /** @var \Drupal\webform\WebformHandlerPluginCollection $handlers */
+      /** @var \Drupal\webform\Plugin\WebformHandlerPluginCollection $handlers */
       $handlers = clone $this->handlersCollection;
     }
 
@@ -1768,7 +1826,7 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
    * {@inheritdoc}
    */
   public function invokeElements($method, &$data, &$context1 = NULL, &$context2 = NULL) {
-    /** @var \Drupal\webform\WebformElementManagerInterface $element_manager */
+    /** @var \Drupal\webform\Plugin\WebformElementManagerInterface $element_manager */
     $element_manager = \Drupal::service('plugin.manager.webform.element');
 
     $elements = $this->getElementsInitializedAndFlattened();
