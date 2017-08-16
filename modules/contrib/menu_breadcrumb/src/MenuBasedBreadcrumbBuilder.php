@@ -273,6 +273,15 @@ class MenuBasedBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       $plugin = $this->menuLinkManager->createInstance($id);
       $links[] = Link::fromTextAndUrl($plugin->getTitle(), $plugin->getUrlObject());
       $breadcrumb->addCacheableDependency($plugin);
+      // In the last line the MenuLinkContent plugin is not providing cache tags.
+      // Until this is fixed in core add the tags here:
+      if ($plugin instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+        $uuid = $plugin->getDerivativeId();
+        $entities = $this->entityTypeManager->getStorage('menu_link_content')->loadByProperties(['uuid' => $uuid]);
+        if ($entity = reset($entities)) {
+          $breadcrumb->addCacheableDependency($entity);
+        }
+      }
     }
     $this->addMissingCurrentPage($links, $route_match);
 
@@ -292,7 +301,9 @@ class MenuBasedBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     $first_url = $links[0]->getUrl();
     // If options are set to remove <front>, strip off that link, otherwise
     // replace it with a breadcrumb named according to option settings:
-    if ($first_url->isRouted() && ($front_url->getRouteName() === $first_url->getRouteName()) && ($front_url->getRouteParameters() === $first_url->getRouteParameters())) {
+    if (($first_url->isRouted() && $front_url->isRouted()) &&
+      ($front_url->getRouteName() === $first_url->getRouteName()) &&
+      ($front_url->getRouteParameters() === $first_url->getRouteParameters())) {
 
       // According to the confusion hopefully cleared up in issue 2754521, the
       // sense of "remove_home" is slightly different than in Menu Breadcrumb:
