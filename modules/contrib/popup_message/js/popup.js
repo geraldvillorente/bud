@@ -176,7 +176,7 @@
             popup_message_height);
         };
 
-        let trigger_time = (!popup_message_cookie) ? (popup_message_cookie + delay - timestamp) : delay;
+        let trigger_time = delay;
 
         setTimeout(run_popup, trigger_time);
       }

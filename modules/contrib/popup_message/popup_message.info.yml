@@ -5,8 +5,8 @@ type: module
 # core: 8.x
 configure: popup_message.settings
 
-# Information added by Drupal.org packaging script on 2017-02-17
-version: '8.x-1.0-beta1'
+# Information added by Drupal.org packaging script on 2017-07-10
+version: '8.x-1.0-beta2'
 core: '8.x'
 project: 'popup_message'
-datestamp: 1487356911
+datestamp: 1499696049
