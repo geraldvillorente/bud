@@ -1,0 +1,4 @@
+filename = converge-premium-theme
+description = "This is the database file for 'Converge - The Best Premium Drupal Theme."
+modules = webform block blog book comment contact dblog filter menu node path php poll search system taxonomy update upload user admin_menu better_messages content content_copy content_permissions number optionwidgets text css_gzip ddblock demo filefield gmap gmap_macro_builder imageapi imageapi_gd imageapi_imagemagick imagecache imagecache_ui imagefield imce imce_wysiwyg jcarousel jquery_colorpicker lightbox2 menu_block menu_breadcrumb page_title skinr unwelcome views_ui wysiwyg forum pathauto fieldgroup comment_notify token views jquery_update better_formats
+version = 1.1
