@@ -273,7 +273,7 @@ iPad 3
   div#block-frontfeaturedtext p {
     font-size: 1.83em;
     font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   div#block-frontfeaturedtext {
@@ -812,6 +812,13 @@ iPad 3
 
 .language-switch-select-form {
   display: none;
+}
+
+div,
+span,
+p,
+li {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @import "settings";
