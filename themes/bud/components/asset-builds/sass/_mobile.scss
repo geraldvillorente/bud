@@ -631,3 +631,14 @@ input.form-search {
     }
   }
 }
+
+// Pop-up.
+#popup-message-window {
+  @media #{$bp-mobile-large-down} {
+    // We need to override an inline style, hence !important.
+    top: 100px !important;
+    left: 25px !important;
+    right: 25px !important;
+    width: auto !important;
+  }
+}
