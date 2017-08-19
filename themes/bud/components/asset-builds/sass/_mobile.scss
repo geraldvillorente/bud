@@ -639,9 +639,14 @@ input.form-search {
     top: 100px !important;
     left: 25px !important;
     right: 25px !important;
-    width: auto !important;
-
     width: 480px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media #{$bp-desktop-only} {
+    left: 25px !important;
+    right: 25px !important;
     margin-left: auto;
     margin-right: auto;
   }
