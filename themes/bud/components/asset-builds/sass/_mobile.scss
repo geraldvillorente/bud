@@ -384,6 +384,7 @@ body:not(.is-path-frontpage) #featured-outer {
 
 .sf-sub-indicator:after {
   @media #{$bp-mobile-large-down} {
+    display: none;
     left: -2px !important;
     top: -2px !important;
   }
@@ -391,6 +392,7 @@ body:not(.is-path-frontpage) #featured-outer {
 
 .sf-sub-indicator {
   @media #{$bp-mobile-large-down} {
+    display: none;
     right: -5px !important;
     top: 57% !important;
   }
@@ -412,13 +414,14 @@ body:not(.is-path-frontpage) #featured-outer {
 
 ul#superfish-main li a {
   @media #{$bp-mobile-large-down} {
+    font-size: 1.083em;
     text-decoration: none;
     text-decoration: none;
     color: #FFF;
     font-weight: bold;
     line-height: normal;
     text-shadow: 0 2px 5px #333;
-    padding: 8px 11px 7px;
+    padding: 8px 0 7px 11px;
   }
 }
 
@@ -799,6 +802,10 @@ input.form-search {
 
 .lang-en #superfish-main li ul {
   margin-top: -1px;
+
+  @media #{$bp-mobile-large-down} {
+    margin-top: -5px;
+  }
 }
 
 main.layout-3col__full {
