@@ -62,6 +62,8 @@ header {
 
 // Slider.
 #block-views-block-banner-block-1 {
+  margin-bottom: 15px !important;
+
   @media #{$bp-mobile-medium-down} {
     margin-top: 10px;
   }
@@ -82,6 +84,8 @@ header {
 
 // Carousel.
 #block-views-block-bud-carousel-block-1 {
+  // margin-bottom: 42px !important;
+
   @media #{$bp-mobile-large-down} {
     // padding-left: 30px;
     // padding-right: 30px;
@@ -170,6 +174,14 @@ header {
       margin: 0;
       padding: 15px 50px;
     }
+  }
+}
+
+body:not(.is-path-frontpage) #featured-outer {
+  margin-top: 0;
+
+  @media screen and (min-width: 1224px) {
+    margin-top: 160px;
   }
 }
 
@@ -453,9 +465,10 @@ div#featured-inner {
 }
 
 div#featured-sub-inner {
+  padding: 25px 0 40px;
+
   @media #{$bp-mobile-large-down} {
     background: url("../../../images/featured2-bottom-bg.png") left bottom repeat-x;
-    padding: 14px 0 18px;
   }
 }
 
@@ -754,4 +767,45 @@ input.form-search {
   bottom: -5px;
   left: 0;
   right: 0;
+}
+
+.lang-en #superfish-main,
+.lang-ch #superfish-main {
+  @include display-flex();
+  @include flex("flex-wrap", "wrap");
+}
+
+.lang-en #superfish-main {
+  @include flex("justify-content", "flex-start");
+}
+
+.lang-ch #superfish-main {
+  @include flex("justify-content", "flex-end");
+}
+
+#superfish-main a {
+  font-size: 1.083em;
+}
+
+#superfish-main .sf-child-is-hovered,
+#superfish-main .sfHover,
+#superfish-main .sf-no-children:hover {
+  background: rgba(0, 0, 0, 0) url("../../../images/bg-menu.png") repeat scroll left top;
+}
+
+.sf-depth-1 {
+  border-radius: 5px 5px 0 0 !important;
+}
+
+.lang-en #superfish-main li ul {
+  margin-top: -1px;
+}
+
+main.layout-3col__full {
+  margin: 0;
+  padding: 0 0 21px;
+}
+
+.breadcrumb__list {
+  margin-top: 6px;
 }
