@@ -365,23 +365,6 @@ iPad 3
     margin-top: 55px;
   }
 
-  .view-bud-carousel .views-field.views-field-field-banner-image {
-    border: 5px solid #FFF;
-    margin: 5px;
-  }
-
-  .view-bud-carousel .views-field.views-field-title {
-    padding: 5px;
-    background: #000;
-    opacity: 0.8;
-    margin: 5px;
-  }
-
-  .view-bud-carousel .views-field.views-field-title a {
-    color: #FFF;
-    text-decoration: none;
-  }
-
   .layout-3col {
     margin: auto;
     width: 960px;
@@ -488,36 +471,6 @@ iPad 3
     display: inline-block;
     zoom: 1;
     vertical-align: middle;
-  }
-
-  .owl-wrapper-outer {
-    margin: auto;
-  }
-
-  .owl-prev {
-    position: absolute;
-    right: 0;
-    top: 55px;
-    background-image: url(/themes/bud/extra-images/images/jcarousel-next.png) !important;
-    height: 51px;
-    width: 30px;
-  }
-
-  .owl-next {
-    position: absolute;
-    left: 0;
-    top: 55px;
-    background-image: url(/themes/bud/extra-images/images/jcarousel-prev.png) !important;
-    height: 51px;
-    width: 30px;
-  }
-
-  .owl-theme .owl-controls .owl-buttons div {
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-    opacity: 1;
-    text-indent: 999999px;
   }
 
   div#block-full-width {
