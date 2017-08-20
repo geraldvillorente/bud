@@ -84,7 +84,7 @@ header {
 
 // Carousel.
 #block-views-block-bud-carousel-block-1 {
-  margin-bottom: 42px !important;
+  // margin-bottom: 42px !important;
 
   @media #{$bp-mobile-large-down} {
     // padding-left: 30px;
@@ -794,5 +794,5 @@ input.form-search {
 
 main.layout-3col__full {
   margin: 0;
-  padding: 0;
+  padding: 0 0 21px;
 }
