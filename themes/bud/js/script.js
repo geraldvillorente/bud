@@ -78,6 +78,33 @@
       else {
         $("body").addClass("lang-ch lang-tch");
       }
+
+      // Video churva.
+      var base = $(".bud-youtube-item");
+      $(base).each(function(index) {
+        var $this = $(this);
+        var video = $(this).find("a").attr("href");
+        if($(this).find(".cb").length == 0) {
+          $(this).append("<div class='cb cb-" + index + "'></div>");
+          $(this).find(".cb").append("<iframe class='cb-embed' src='" + video + "' scrolling='no'></iframe>");
+          $(this).find(".bud-youtube-image a, .bud-youtube-desc a").attr("data-colorbox-inline", ".cb.cb-" + index);
+          $(this).find(".bud-youtube-image a, .bud-youtube-desc a").attr("data-width", "650px");
+          $(this).find(".bud-youtube-image a, .bud-youtube-desc a").attr("data-height", "450px");
+        }
+      });
+
+      $('[data-colorbox-inline]', context).once().click(function () {
+        var $link = $(this);
+        var settings = $.extend(drupalSettings.colorbox, {
+          href: false,
+          inline: true
+        }, {
+          href: $link.data('colorbox-inline'),
+          width: $link.data('width'),
+          height: $link.data('height')
+        });
+        $link.colorbox(settings);
+      });
     }
   };
 
