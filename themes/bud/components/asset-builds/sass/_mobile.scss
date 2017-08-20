@@ -760,3 +760,17 @@ input.form-search {
   @include display-flex();
   @include flex("justify-content", "flex-end");
 }
+
+#superfish-main a {
+  font-size: 1.083em;
+}
+
+#superfish-main .sf-child-is-hovered,
+#superfish-main .sfHover,
+#superfish-main .sf-no-children:hover {
+  background: rgba(0, 0, 0, 0) url("../../../images/bg-menu.png") repeat scroll left top;
+}
+
+.sf-depth-1 {
+  border-radius: 5px 5px 0 0 !important;
+}
