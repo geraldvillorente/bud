@@ -651,3 +651,38 @@ input.form-search {
     margin-right: auto;
   }
 }
+
+// Carousel fixes.
+.view-bud-carousel {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.owl-wrapper-outer {}
+
+.owl-item {
+  margin: 0;
+  padding: 0;
+  height: 145px;
+  overflow: hidden;
+}
+
+.owl-controls .owl-buttons div.owl-prev {
+  margin-right: -45px;
+}
+
+.owl-controls .owl-buttons div.owl-next {
+  margin-left: -45px;
+}
+
+.image-style-bud-carousel {
+  width: 100%;
+  height: auto;
+}
+
+.owl-item .views-field-title {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+}
