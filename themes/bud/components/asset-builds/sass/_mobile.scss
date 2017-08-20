@@ -83,13 +83,13 @@ header {
 // Carousel.
 #block-views-block-bud-carousel-block-1 {
   @media #{$bp-mobile-large-down} {
-    padding-left: 30px;
-    padding-right: 30px;
+    // padding-left: 30px;
+    // padding-right: 30px;
   }
 
   .owl-item:not(:last-child) {
     @media #{$bp-mobile-large-down} {
-      margin-right: 25px;
+      // margin-right: 25px;
     }
   }
 
@@ -650,4 +650,108 @@ input.form-search {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+// Carousel on mobile.
+  .view-bud-carousel .views-field.views-field-field-banner-image {
+    border: 5px solid #FFF;
+    margin: 5px;
+  }
+
+  .view-bud-carousel .views-field.views-field-title {
+    padding: 5px;
+    background: #000;
+    opacity: 0.8;
+    margin: 5px;
+  }
+
+  .view-bud-carousel .views-field.views-field-title a {
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  .owl-wrapper-outer {
+    margin: auto;
+  }
+
+  .owl-prev {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background-image: url(/themes/bud/extra-images/images/jcarousel-next.png) !important;
+    height: 51px;
+    width: 30px;
+  }
+
+  .owl-next {
+    position: absolute;
+    left: 0;
+    top: 55px;
+    background-image: url(/themes/bud/extra-images/images/jcarousel-prev.png) !important;
+    height: 51px;
+    width: 30px;
+  }
+
+  .owl-theme .owl-controls {
+    display: block !important;
+  }
+
+  .owl-theme .owl-controls .owl-buttons div {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    opacity: 1;
+    text-indent: 999999px;
+  }
+
+// Carousel fixes.
+.view-bud-carousel {
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @media screen and (min-width: 1224px) {
+    margin-bottom: 25px;
+  }
+}
+
+.owl-wrapper-outer {}
+
+.owl-item {
+  margin: 0;
+  padding: 0;
+  height: 145px;
+  overflow: hidden;
+}
+
+.owl-controls .owl-buttons div.owl-prev,
+.owl-controls .owl-buttons div.owl-next {
+  top: 13px;
+  
+  @media screen and (min-width: 1224px) {
+    top: 45px;
+  }
+}
+
+.owl-controls .owl-buttons div.owl-prev {
+  left: auto !important;
+    right: 0 !important;
+  margin-right: -45px;
+}
+
+.owl-controls .owl-buttons div.owl-next {
+   left: 0 !important;
+    right: auto !important;
+  margin-left: -45px;
+}
+
+.image-style-bud-carousel {
+  width: 100%;
+  height: auto;
+}
+
+.owl-item .views-field-title {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
 }
