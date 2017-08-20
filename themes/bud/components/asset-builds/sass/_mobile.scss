@@ -755,3 +755,8 @@ input.form-search {
   left: 0;
   right: 0;
 }
+
+.lang-ch #superfish-main {
+  @include display-flex();
+  @include flex("justify-content", "flex-end");
+}
