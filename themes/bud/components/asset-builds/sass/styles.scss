@@ -276,7 +276,6 @@ iPad 3
 
   div#featured-sub-inner {
     background: url(/themes/bud/images/featured2-bottom-bg.png) left bottom repeat-x;
-    padding: 14px 0 18px;
   }
 
   div#block-frontfeaturedtext p {
@@ -490,6 +489,10 @@ iPad 3
   div#block-bud-page-title {
     width: 960px;
     margin: auto;
+  }
+
+  div#block-bud-page-title .page-title .field--name-title {
+    font-size: 32.50px;
   }
 
   .node-page .page-title {

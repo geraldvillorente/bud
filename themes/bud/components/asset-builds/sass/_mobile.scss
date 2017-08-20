@@ -177,6 +177,10 @@ header {
   }
 }
 
+body:not(.is-path-frontpage) #featured-outer {
+  margin-top: 160px;
+}
+
 #block-bud-breadcrumbs {
   @media #{$bp-mobile-large-down} {
     padding: 0 25px;
@@ -457,9 +461,10 @@ div#featured-inner {
 }
 
 div#featured-sub-inner {
+  padding: 25px 0 40px;
+
   @media #{$bp-mobile-large-down} {
     background: url("../../../images/featured2-bottom-bg.png") left bottom repeat-x;
-    padding: 14px 0 18px;
   }
 }
 
@@ -795,4 +800,8 @@ input.form-search {
 main.layout-3col__full {
   margin: 0;
   padding: 0 0 21px;
+}
+
+.breadcrumb__list {
+  margin-top: 6px;
 }
