@@ -63,6 +63,21 @@
           $(this).parent().prev().removeClass("sf-child-is-hovered");
         }
       );
+
+      // Add lang class to the body.
+      var first = $(location).attr('pathname');
+      first.indexOf(1);
+      first.toLowerCase();
+      first = first.split("/")[1];
+      if(first === "en") {
+        $("body").addClass("lang-en");
+      }
+      else if(first === "zh-hans"){
+        $("body").addClass("lang-ch lang-zhh");
+      }
+      else {
+        $("body").addClass("lang-ch lang-tch");
+      }
     }
   };
 
