@@ -1,0 +1,22 @@
+# Chinese, Traditional translation of Menu Breadcrumb (8.x-1.4)
+# Copyright (c) 2017 by the Chinese, Traditional translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Menu Breadcrumb (8.x-1.4)\n"
+"POT-Creation-Date: 2017-08-07 10:44+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Chinese, Traditional\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "Home"
+msgstr "首頁"
+msgid "Enabled"
+msgstr "啟用"
+msgid "Weight"
+msgstr "權重"
+msgid "Menu"
+msgstr "選單"
