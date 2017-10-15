@@ -7,7 +7,6 @@ use Drupal\Core\Database\Query\Delete as QueryDelete;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\webform\Plugin\Field\FieldType\WebformEntityReferenceItem;
 use Drupal\webform\WebformInterface;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\webform\WebformTokenManagerInterface;
@@ -67,7 +66,7 @@ class WebformScheduledEmailManager implements WebformScheduledEmailManagerInterf
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
    * @param \Drupal\webform\WebformTokenManagerInterface $token_manager
-   *   The token manager.
+   *   The webform token manager.
    */
   public function __construct(Connection $database, EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, WebformTokenManagerInterface $token_manager) {
     $this->database = $database;
@@ -691,7 +690,7 @@ class WebformScheduledEmailManager implements WebformScheduledEmailManagerInterf
   /**
    * Inspects an entity and returns the associates webform, webform submission, and/or source entity.
    *
-   * @param \Drupal\Core\Entity\EntityInterface|NULL $entity
+   * @param \Drupal\Core\Entity\EntityInterface|null $entity
    *   A webform, webform submission, or source entity.
    *
    * @return array
@@ -710,8 +709,11 @@ class WebformScheduledEmailManager implements WebformScheduledEmailManagerInterf
       $webform = $webform_submission->getWebform();
     }
     elseif ($entity instanceof EntityInterface) {
+      /** @var \Drupal\webform\WebformEntityReferenceManagerInterface $entity_reference_manager */
+      $entity_reference_manager = \Drupal::service('webform.entity_reference_manager');
+
       $source_entity = $entity;
-      $webform = WebformEntityReferenceItem::getEntityWebformTarget($source_entity);
+      $webform = $entity_reference_manager->getWebform($source_entity);
     }
 
     return [$webform, $webform_submission, $source_entity];
@@ -728,7 +730,7 @@ class WebformScheduledEmailManager implements WebformScheduledEmailManagerInterf
    *   A webform submission.
    * @param \Drupal\Core\Entity\EntityInterface|null $source_entity
    *   A source entity.
-   * @param null $handler_id
+   * @param string|null $handler_id
    *   A webform handler id.
    * @param string|null $state
    *   The state of the scheduled emails.
