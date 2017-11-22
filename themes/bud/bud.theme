@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup.
@@ -158,17 +158,19 @@ function bud_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state
   // Default to zh-hant
   $search = '搜尋';
   // Add placeholder.
-  $form['elements']['name']['#attributes']['placeholder'] = $form['elements']['name']['#title'];
-  unset($form['elements']['name']['#title']);
+  if (isset($form['elements'])) {
+    $form['elements']['name']['#attributes']['placeholder'] = $form['elements']['name']['#title'];
+    unset($form['elements']['name']['#title']);
 
-  $form['elements']['email']['#attributes']['placeholder'] = $form['elements']['email']['#title'];
-  unset($form['elements']['email']['#title']);
+    $form['elements']['email']['#attributes']['placeholder'] = $form['elements']['email']['#title'];
+    unset($form['elements']['email']['#title']);
 
-  $form['elements']['subject']['#attributes']['placeholder'] = $form['elements']['subject']['#title'];
-  unset($form['elements']['subject']['#title']);
+    $form['elements']['subject']['#attributes']['placeholder'] = $form['elements']['subject']['#title'];
+    unset($form['elements']['subject']['#title']);
 
-  $form['elements']['message']['#attributes']['placeholder'] = $form['elements']['message']['#title'];
-  unset($form['elements']['message']['#title']);
+    $form['elements']['message']['#attributes']['placeholder'] = $form['elements']['message']['#title'];
+    unset($form['elements']['message']['#title']);
+  }
   // Switch language.
   if ($language == 'zh-hans') {
     $search = '搜寻';
