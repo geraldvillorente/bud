@@ -15,11 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class WebformDevelEntitySchemaForm extends EntityForm {
 
- use WebformEntityAjaxFormTrait;
+  use WebformEntityAjaxFormTrait;
 
   /**
    * The webform devel scheme service.
-   * 
+   *
    * @var \Drupal\webform_devel\WebformDevelSchemaInterface
    */
   protected $scheme;
@@ -65,6 +65,9 @@ class WebformDevelEntitySchemaForm extends EntityForm {
       $rows[$element_key] = [];
 
       foreach ($element as $key => $value) {
+        if ($key === 'options') {
+          $value = implode('; ', array_slice($value, 0, 12)) . (count($value) > 12 ? '; ...' : '');
+        }
         $rows[$element_key][$key] = ['#markup' => $value];
       }
 
@@ -74,7 +77,7 @@ class WebformDevelEntitySchemaForm extends EntityForm {
 
       if ($webform_ui_exists) {
         // Only add 'Edit' link to main element and not composite sub-elements.
-        if (strpos($element_key, '.') === FALSE){
+        if (strpos($element_key, '.') === FALSE) {
           $element_url = new Url(
             'entity.webform_ui.element.edit_form',
             ['webform' => $webform->id(), 'key' => $element_key],

@@ -86,16 +86,26 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     }
 
     // Add the filter by key(word) and/or state.
-    $state_options = [
-      '' => $this->t('All [@total]', ['@total' => $this->getTotal(NULL, NULL)]),
-      WebformInterface::STATUS_OPEN => $this->t('Open [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_OPEN)]),
-      WebformInterface::STATUS_CLOSED => $this->t('Closed [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_CLOSED)]),
-      WebformInterface::STATUS_SCHEDULED => $this->t('Scheduled [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_SCHEDULED)]),
-    ];
+    if (\Drupal::currentUser()->hasPermission('administer webform')) {
+      $state_options = [
+        '' => $this->t('All [@total]', ['@total' => $this->getTotal(NULL, NULL)]),
+        WebformInterface::STATUS_OPEN => $this->t('Open [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_OPEN)]),
+        WebformInterface::STATUS_CLOSED => $this->t('Closed [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_CLOSED)]),
+        WebformInterface::STATUS_SCHEDULED => $this->t('Scheduled [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_SCHEDULED)]),
+      ];
+    }
+    else {
+      $state_options = [
+        '' => $this->t('All'),
+        WebformInterface::STATUS_OPEN => $this->t('Open'),
+        WebformInterface::STATUS_CLOSED => $this->t('Closed'),
+        WebformInterface::STATUS_SCHEDULED => $this->t('Scheduled'),
+      ];
+    }
     $build['filter_form'] = \Drupal::formBuilder()->getForm('\Drupal\webform\Form\WebformEntityFilterForm', $this->keys, $this->category, $this->state, $state_options);
 
     // Display info.
-    if ($total = $this->getTotal($this->keys, $this->category, $this->state)) {
+    if (\Drupal::currentUser()->hasPermission('administer webform') && ($total = $this->getTotal($this->keys, $this->category, $this->state))) {
       $build['info'] = [
         '#markup' => $this->formatPlural($total, '@total webform', '@total webforms', ['@total' => $total]),
         '#prefix' => '<div>',
@@ -161,7 +171,7 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     // WORK-AROUND: Don't link to the webform.
     // See: Access control is not applied to config entity queries
     // https://www.drupal.org/node/2636066
-    $row['title']['data']['title'] = ['#markup' => ($entity->access('view')) ? $entity->toLink()->toString() : $entity->label()];
+    $row['title']['data']['title'] = ['#markup' => ($entity->access('submission_page')) ? $entity->toLink()->toString() : $entity->label()];
     if ($entity->isTemplate()) {
       $row['title']['data']['template'] = ['#markup' => ' <b>(' . $this->t('Template') . ')</b>'];
     }
@@ -238,7 +248,7 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
           'url' => Url::fromRoute('entity.webform.settings', $route_parameters),
         ];
       }
-      if ($entity->access('view')) {
+      if ($entity->access('submission_page')) {
         $operations['view'] = [
           'title' => $this->t('View'),
           'weight' => 24,
@@ -249,7 +259,7 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
         $operations['test'] = [
           'title' => $this->t('Test'),
           'weight' => 25,
-          'url' => Url::fromRoute('entity.webform.test', $route_parameters),
+          'url' => Url::fromRoute('entity.webform.test_form', $route_parameters),
         ];
       }
       if ($entity->access('duplicate')) {
@@ -352,7 +362,7 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     // If the user is not a webform admin, check access to each webform.
     if (!$this->isAdmin()) {
       foreach ($entities as $entity_id => $entity) {
-        if (!$entity->access('update')) {
+        if (!$entity->access('update') && !$entity->access('submission_view_any')) {
           unset($entities[$entity_id]);
         }
       }

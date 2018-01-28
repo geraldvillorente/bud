@@ -48,8 +48,12 @@ class WebformLibrariesTest extends WebformTestBase {
 
     $this->drupalLogin($this->rootUser);
 
-    // Enable jquery.chosen.
-    $this->drupalPostForm('admin/structure/webform/settings/libraries', ['libraries[excluded_libraries][jquery.chosen]' => TRUE], t('Save configuration'));
+    // Enable jquery.chosen and jquery.icheck.
+    $edit = [
+      'libraries[excluded_libraries][jquery.chosen]' => TRUE,
+      'libraries[excluded_libraries][jquery.icheck]' => TRUE,
+    ];
+    $this->drupalPostForm('admin/structure/webform/config/libraries', $edit, t('Save configuration'));
 
     // Check optional libraries are included.
     $this->drupalGet('webform/test_libraries_optional');
@@ -82,7 +86,7 @@ class WebformLibrariesTest extends WebformTestBase {
       'libraries[excluded_libraries][jquery.timepicker]' => FALSE,
       'libraries[excluded_libraries][jquery.word-and-character-counter]' => FALSE,
     ];
-    $this->drupalPostForm('admin/structure/webform/settings/libraries', $edit, t('Save configuration'));
+    $this->drupalPostForm('admin/structure/webform/config/libraries', $edit, t('Save configuration'));
 
     // Check optional libraries are excluded.
     $this->drupalGet('webform/test_libraries_optional');
@@ -123,7 +127,7 @@ class WebformLibrariesTest extends WebformTestBase {
       'excluded_elements[webform_toggle]' => FALSE,
       'excluded_elements[webform_toggles]' => FALSE,
     ];
-    $this->drupalPostForm('admin/structure/webform/settings/elements', $edit, t('Save configuration'));
+    $this->drupalPostForm('admin/structure/webform/config/elements', $edit, t('Save configuration'));
 
     // Check that status report excludes libraries required by element types.
     $this->drupalGet('admin/reports/status');

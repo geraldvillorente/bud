@@ -102,7 +102,6 @@ trait WebformAjaxFormTrait {
     if (!$this->moduleHandler->moduleExists('quickedit')) {
       return FALSE;
     }
-    
     return (\Drupal::request()->query->get('destination')) ? TRUE : FALSE;
   }
 
@@ -178,16 +177,21 @@ trait WebformAjaxFormTrait {
    *   to a URL
    */
   public function submitAjaxForm(array &$form, FormStateInterface $form_state) {
+    $scroll_top_target = (isset($form['#webform_ajax_scroll_top'])) ? $form['#webform_ajax_scroll_top'] : 'form';
     if ($form_state->hasAnyErrors()) {
       // Display validation errors and scroll to the top of the page.
       $response = $this->replaceForm($form, $form_state);
-      $response->addCommand(new WebformScrollTopCommand('#' . $this->getWrapperId()));
+      if ($scroll_top_target) {
+        $response->addCommand(new WebformScrollTopCommand('#' . $this->getWrapperId(), $scroll_top_target));
+      }
       return $response;
     }
     elseif ($form_state->isRebuilding()) {
       // Rebuild form.
       $response = $this->replaceForm($form, $form_state);
-      $response->addCommand(new WebformScrollTopCommand('#' . $this->getWrapperId()));
+      if ($scroll_top_target) {
+        $response->addCommand(new WebformScrollTopCommand('#' . $this->getWrapperId(), $scroll_top_target));
+      }
       return $response;
     }
     elseif ($redirect_url = $this->getFormStateRedirectUrl($form_state)) {
@@ -223,7 +227,7 @@ trait WebformAjaxFormTrait {
    * @return \Drupal\Core\Ajax\AjaxResponse
    *   An AjaxResponse or WebformAjaxResponse object
    */
-  protected function createAjaxResponse(array $form, $form_state) {
+  protected function createAjaxResponse(array $form, FormStateInterface $form_state) {
     $form_object = $form_state->getFormObject();
     if ($form_object instanceof WebformSubmissionForm) {
       /** @var \Drupal\webform\WebformSubmissionInterface $webform_submission */
@@ -249,7 +253,7 @@ trait WebformAjaxFormTrait {
    * @return \Drupal\Core\Ajax\AjaxResponse
    *   An Ajax response that replaces a form.
    */
-  protected function replaceForm(array $form, $form_state) {
+  protected function replaceForm(array $form, FormStateInterface $form_state) {
     // Display messages first by prefixing it the form and setting its weight
     // to -1000.
     $form = [
