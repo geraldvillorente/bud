@@ -184,7 +184,7 @@ function skinr_ui_block_view_alter(array &$build, \Drupal\Core\Block\BlockPlugin
  *
  * @todo Abstract into something more generic or move into skinr node plugin.
  */
-function skinr_ui_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode, $langcode) {
+function skinr_ui_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode, $langcode="NONE") {
   // Add contextual links for node types.
   if ($entity->getEntityTypeId() == 'node') {
     $build['#contextual_links']['skinr'] = array(
