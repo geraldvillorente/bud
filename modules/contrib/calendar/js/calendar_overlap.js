@@ -73,10 +73,10 @@
 
     // Scroll the viewport to the first item
       function calendar_scrollToFirst() {
-        if ($('div.first_item').size() > 0) {
-          var y = $('div.first_item').offset().top - $('#single-day-container').offset().top;
-          $('#single-day-container').scrollTop(y);
-        }
+    	  if ($('div.first_item').lenght) {
+    	    var y = $('div.first_item').offset().top - $('#single-day-container').offset().top;
+    	    $('#single-day-container').scrollTop(y);
+    	  }
       }
 
     // Size the single day view
