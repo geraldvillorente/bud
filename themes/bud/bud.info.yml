@@ -81,6 +81,7 @@ libraries:
   - bud/pager
   - bud/bud-accordion
   - bud/bud-styles
+  - bud/duncan-styles
 
 
 # This section is used by the contrib module, Component Libraries. It allows you

@@ -198,3 +198,8 @@ custom-styles:
   css:
     component:
       components/all/styles.css: {}
+duncan-styles:
+  css:
+    component:
+      components/asset-builds/css/duncan-styles.css: {}
+      

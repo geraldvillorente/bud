@@ -23,6 +23,7 @@ sites/*/services*.yml
 # sites/*/private
 sites/*/files/php/
 sites/*/files/php/twig
+sites/*/files/languages
 
 # Ignore SimpleTest multi-site environment.
 sites/simpletest
