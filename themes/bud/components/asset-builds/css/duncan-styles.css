@@ -1,5 +1,125 @@
 @CHARSET "UTF-8";
-
-h2 {
-  background-color: lightblue;
+body {
+	background-color: #f2f2f2;
 }
+
+div#language-switcher {
+	background-color: #f2f2f2;
+	background: #f2f2f2;
+}
+div#block-languageswitcherinterfacetext ul li a {
+	color: #161616
+}
+
+div#featured-bg-outer {
+	background-color: #f2f2f2;
+	background-image: none;
+	background: #f2f2f2;
+}
+div#featured-bg {
+	background: #f2f2f2;
+}
+div#featured-sub-inner {
+	background: #f2f2f2;
+}
+
+div#bud-footer-sub-inner {
+	background: #95282c;	
+}
+div#bud-footer-sub-inner a:link{
+	color: #fff;	
+}
+div#bud-footer-sub-inner textarea,
+div#bud-footer-sub-inner input {
+	background: #95282c;
+	color: #fff;
+	border: 1px solid #ae5b5e;
+}
+div#bud-footer-sub-inner input.button {
+	background: #fff;
+	color: #161616;
+	border: 1px solid #161616;
+}
+div#bottom-footer {
+	background: #95282c;
+	border-top: 1px solid #9e9a9a;
+}
+#block-regionsite li {
+    float: left;
+    margin: 0px .6em;
+    
+}
+#block-regionsite li a{
+    color: #fff;
+    padding: 0 1em;
+    height: 24px;
+    line-height: 24px;
+    text-decoration: none;
+    background: #95282c;
+    border-radius: 10px 10px 0 0;
+    display: inline-block;
+}
+#block-regionsite li a.mainland-plan-link {
+	height: 36px;
+    line-height: 36px;
+}
+#block-regionsite li a.east-plan-link{
+	margin-top: 12px;
+    background: #3366cc;
+}
+div#block-mainnavigation-5 {
+    padding-top: 5px;
+    }
+ul#superfish-main {
+    background: #95282c;
+    border-radius: 10px;
+    justify-content: left!important;
+    overflow: hidden;
+}
+ul#superfish-main li a {
+	font-weight: normal;
+	text-shadow: none;
+}
+
+ul#superfish-main li a.is-active {
+	background: none;
+}
+#block-frontfeaturedtext .field__item {
+	background: #dcdcdc;
+	text-align: center;
+	color: #161616;
+	border-bottom: 3px solid #95282c;
+}
+#block-frontfeaturedtext .field__item p{
+	margin: 1em 0;
+}
+.node_background {
+	background-color: #f2f2f2;
+}
+.node-page .page-title {
+	color: #161616;
+}
+div#block-languageswitchblock {
+	background-color: #f2f2f2;
+}
+div#block-languageswitchblock div a {
+	text-decoration: none;
+}
+#block-homepagebigbuttons {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+.is-page-node-type-page .button.red, 
+.is-page-node-type-date .button.red {
+	background-color: #95282c!important;
+}
+.is-page-node-type-page .button.blue, 
+.is-page-node-type-date .button.blue {
+	background-color: #3366cc!important;
+}
+
+
+
+
+
+
