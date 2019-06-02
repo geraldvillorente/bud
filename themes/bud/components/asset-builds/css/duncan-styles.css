@@ -1,39 +1,39 @@
 @CHARSET "UTF-8";
 body {
-	background-color: #f2f2f2;
+	background-color: #ffffff;
 }
 
 div#language-switcher {
-	background-color: #f2f2f2;
-	background: #f2f2f2;
+	background-color: #fff;
+	background: #fff;
 }
 div#block-languageswitcherinterfacetext ul li a {
 	color: #161616
 }
 
 div#featured-bg-outer {
-	background-color: #f2f2f2;
+	background-color: #fff;
 	background-image: none;
-	background: #f2f2f2;
+	background: #fff;
 }
 div#featured-bg {
-	background: #f2f2f2;
+	background: #fff;
 }
 div#featured-sub-inner {
-	background: #f2f2f2;
+	background: #fff;
 }
 
 div#bud-footer-sub-inner {
-	background: #95282c;	
+	background: #686868;	
 }
 div#bud-footer-sub-inner a:link{
 	color: #fff;	
 }
 div#bud-footer-sub-inner textarea,
 div#bud-footer-sub-inner input {
-	background: #95282c;
+	background: #6f6f6f;
 	color: #fff;
-	border: 1px solid #ae5b5e;
+	border: 1px solid #8a8a8a;
 }
 div#bud-footer-sub-inner input.button {
 	background: #fff;
@@ -41,7 +41,7 @@ div#bud-footer-sub-inner input.button {
 	border: 1px solid #161616;
 }
 div#bottom-footer {
-	background: #95282c;
+	background: #686868;
 	border-top: 1px solid #9e9a9a;
 }
 #block-regionsite li {
@@ -118,6 +118,58 @@ div#block-languageswitchblock div a {
 	background-color: #3366cc!important;
 }
 
+/* home */
+#block-homepagebigbuttons .field__item {
+	display: flex;
+}
+#block-homepagepoliciesblockzh .field__item {
+	display: flex;
+	margin: 0 -5px;
+}
+#block-views-block-latest-news-block-1 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 3px solid #9e9a9a;
+}
+#block-views-block-latest-news-block-1  .view-id-latest_news {
+	display: flex;
+}
+#block-views-block-latest-news-block-1  .view-id-latest_news .view-content{
+	width: 66%;
+}
+#block-views-block-latest-news-block-1  .view-id-latest_news .view-footer{
+	width: 33%;
+	margin-top: -40px;
+}
+#block-homepagepoliciesblockzh .field__item  {
+	text-align: center;
+}
+#block-homepagepoliciesblockzh .field__item  h3{
+	margin-top: 0;
+}
+#block-homepagepoliciesblockzh .field__item  p{
+	text-align: left;
+}
+#block-homepagepoliciesblockzh .field__item .policy-one,
+#block-homepagepoliciesblockzh .field__item .policy-two,
+#block-homepagepoliciesblockzh .field__item .policy-three,
+#block-homepagepoliciesblockzh .field__item .policy-four {
+	width: 25%;
+	margin: 0 5px;
+}
+
+
+#block-homepagebottomlogoblockzh .field__item {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#block-homepagebottomlogoblockzh .field__item .homepage-logo-hksar,
+#block-homepagebottomlogoblockzh .field__item .homepage-logo-hkpc {
+	margin: 0 10px;
+}
 
 
 
